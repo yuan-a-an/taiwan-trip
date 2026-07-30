@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123447">
+<title>台湾南部旅行｜逐日执行手册｜2026.09.19–09.27</title>
+<style>
+:root{
+  --ink:#162735;--muted:#687985;--paper:#f4f0e8;--card:#fffdf8;
+  --navy:#123447;--blue:#246d8c;--teal:#21786f;--orange:#dd7938;
+  --red:#bf4f47;--yellow:#efc55b;--violet:#715f9d;--line:#ded8ce;
+  --shadow:0 12px 34px rgba(31,47,58,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);line-height:1.65;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(circle at 8% 0,rgba(239,197,91,.25),transparent 29rem),
+    linear-gradient(180deg,#edf4f5 0,#f4f0e8 34rem,#f4f0e8);
+}
+a{color:inherit}
+.page{max-width:1180px;margin:auto;padding:26px 18px 82px}
+.hero{
+  position:relative;overflow:hidden;color:white;padding:38px 36px 34px;border-radius:29px;
+  background:linear-gradient(125deg,#102b3d,#155069 57%,#237c77);box-shadow:var(--shadow)
+}
+.hero:after{
+  content:"";position:absolute;right:-105px;top:-175px;width:430px;height:430px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.21);
+  box-shadow:0 0 0 54px rgba(255,255,255,.034),0 0 0 108px rgba(255,255,255,.022)
+}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:9px 0 12px;max-width:900px}
+.subtitle{max-width:850px;margin:0;color:rgba(255,255,255,.83)}
+.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.pill{display:inline-flex;padding:7px 12px;border-radius:999px;font-size:13px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.17)}
+.hero-note{margin-top:20px;max-width:870px;padding:12px 14px;border-left:4px solid var(--yellow);background:rgba(0,0,0,.14);border-radius:5px 13px 13px 5px;font-size:14px}
+
+.nav{
+  position:sticky;top:0;z-index:20;display:flex;gap:8px;overflow:auto;
+  margin:16px 0 20px;padding:10px;border-radius:16px;background:rgba(244,240,232,.92);
+  backdrop-filter:blur(12px);border:1px solid rgba(50,70,82,.1);box-shadow:0 8px 22px rgba(31,47,58,.08)
+}
+.nav a{flex:0 0 auto;text-decoration:none;padding:8px 11px;border-radius:10px;background:#fff;border:1px solid #ddd7cd;font-size:13px;font-weight:750}
+.nav a:hover{background:#eaf3f4}
+
+.legend,.assumptions,.booking,.day,.sources{
+  background:rgba(255,253,248,.97);border:1px solid rgba(60,75,85,.1);border-radius:22px;box-shadow:var(--shadow)
+}
+.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 18px;margin-bottom:15px}
+.legend-item{display:flex;align-items:center;gap:9px;font-size:13px}
+.dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+.fixed{background:var(--red)}.estimate{background:var(--blue)}.reserve{background:var(--violet)}.frequency{background:var(--teal)}
+
+.assumptions,.booking{padding:21px;margin-bottom:18px}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.section-title h2{margin:0;font-size:22px}.section-title p{margin:0;color:var(--muted);font-size:13px}
+.assumption-grid,.booking-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.assumption,.book-item{padding:13px 14px;border-radius:14px;background:#f5f1e9;border:1px solid #e5ded4}
+.assumption b,.book-item b{display:block;margin-bottom:3px}
+.assumption span,.book-item span{font-size:13px;color:var(--muted)}
+.warning{margin-top:12px;padding:11px 13px;border-radius:13px;background:#fff1d8;border:1px solid #ead19b;font-size:13px}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.link{display:inline-flex;text-decoration:none;padding:8px 11px;border:1px solid #cbd5d9;background:white;border-radius:10px;font-size:13px;font-weight:750}
+.link:hover{background:#edf4f5}
+
+.day{padding:23px;margin:20px 0;scroll-margin-top:78px}
+.day-head{display:grid;grid-template-columns:120px 1fr 260px;gap:18px;align-items:center;padding-bottom:17px;border-bottom:1px solid var(--line)}
+.date-box{padding-right:16px;border-right:1px solid var(--line)}
+.date-box b{display:block;font-size:28px;line-height:1.1}
+.date-box span{font-size:13px;color:var(--muted)}
+.day-title h2{margin:0 0 5px;font-size:24px}.day-title p{margin:0;color:var(--muted)}
+.hotel-box{padding:12px 13px;border-radius:14px;background:#e9f2f3;border:1px solid #d3e4e6}
+.hotel-box span{display:block;font-size:12px;color:#58717a}.hotel-box b{display:block;font-size:16px;color:#184d61}
+.day-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.tag{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}
+.tag.fixed-t{background:#fde3df;color:#96342e}.tag.estimate-t{background:#e3eef5;color:#275872}.tag.reserve-t{background:#ece8f7;color:#594b82}
+
+.timeline{position:relative;margin-top:19px;padding-left:43px}
+.timeline:before{content:"";position:absolute;left:17px;top:18px;bottom:18px;width:2px;background:#d2d9dc}
+.event{position:relative;margin-bottom:13px;padding:18px 19px;border-radius:18px;background:#fff;border:1px solid #e5dfd5}
+.event:before{content:"";position:absolute;left:-33px;top:21px;width:13px;height:13px;border-radius:50%;border:4px solid var(--blue);background:var(--card);z-index:2}
+.event.transport:before{border-color:var(--red)}.event.food:before{border-color:var(--orange)}.event.hotel:before{border-color:var(--teal)}.event.booking-event:before{border-color:var(--violet)}
+.time-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.time{font-size:18px;font-weight:850}.duration{white-space:nowrap;padding:4px 9px;border-radius:999px;background:#edf0f1;color:var(--muted);font-size:12px}
+.event h3{font-size:18px;margin:4px 0 7px}
+.event p{margin:0 0 7px}
+.steps{display:grid;gap:8px;margin-top:9px}
+.step{display:grid;grid-template-columns:29px 1fr;gap:9px;padding:10px 11px;border-radius:12px;background:#f5f1e9;border:1px solid #e7e0d6}
+.num{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:850}
+.step b{display:block;margin-bottom:1px}
+.route-chip{display:inline-flex;margin:4px 3px 4px 0;padding:4px 8px;border-radius:8px;background:#e7f1f4;color:#154d62;font-size:12px;font-weight:800}
+
+.fallback{
+  margin-top:11px;padding:12px 13px;border-radius:13px;
+  background:#eef7f4;border:1px solid #cbe4dc;font-size:13px
+}
+.fallback b{color:#176158}.fallback .freq{display:inline-flex;margin-left:5px;padding:2px 7px;border-radius:999px;background:#d9eee7;color:#15594f;font-size:11px;font-weight:850}
+.no-service{background:#fff0e8;border-color:#edc9b9}.no-service b{color:#93452d}.no-service .freq{background:#f8ddd1;color:#8b402c}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.critical{margin-top:10px;padding:10px 12px;border-left:4px solid var(--red);background:#fff0ed;border-radius:5px 12px 12px 5px;font-size:13px}
+
+.day-footer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.info-card{padding:13px 14px;border-radius:14px;background:#f5f1e9;border:1px solid #e5ded4}
+.info-card b{display:block;margin-bottom:3px}.info-card span{font-size:13px;color:var(--muted)}
+
+.check{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:9px 10px;border-radius:11px;background:#f5f1e9;border:1px solid #e5ded4}
+.check input{margin-top:5px;accent-color:var(--teal);transform:scale(1.12)}
+.check.done span{text-decoration:line-through;color:#87949c}
+
+
+
+.route-map{
+  background:rgba(255,253,248,.97);border:1px solid rgba(60,75,85,.1);
+  border-radius:22px;box-shadow:var(--shadow);padding:22px;margin:18px 0 20px
+}
+.route-map-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
+.map-card{
+  background:linear-gradient(180deg,#eef6f7,#fffdf8);border:1px solid #dbe6e8;
+  border-radius:18px;padding:12px
+}
+.map-note{
+  padding:14px 15px;border-radius:16px;background:#f5f1e9;border:1px solid #e5ded4
+}
+.map-note h3{margin:0 0 8px;font-size:18px}
+.map-note ul{margin:0;padding-left:18px}
+.map-note li{margin:5px 0}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.map-pill{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;
+  background:#fff;border:1px solid #ddd7cd;font-size:12px;font-weight:750
+}
+.map-dot{width:10px;height:10px;border-radius:50%}
+@media(max-width:820px){.route-map-wrap{grid-template-columns:1fr}}
+
+
+.transport-options{
+  display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:14px 0
+}
+.transport-option{
+  padding:15px;border-radius:15px;background:#eef6f7;border:1px solid #cfe1e5
+}
+.transport-option.shuttle{background:#f4f0fa;border-color:#dcd4ed}
+.transport-option .option-label{
+  display:inline-flex;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:850;
+  background:#d7ebef;color:#184f62;margin-bottom:6px
+}
+.transport-option.shuttle .option-label{background:#e6def4;color:#59467f}
+.transport-option h3{margin:0 0 5px;font-size:17px}
+.transport-option p{margin:4px 0;font-size:13px;color:var(--muted)}
+.transport-option ol{margin:8px 0 0;padding-left:20px}
+.transport-option li{margin:4px 0;font-size:13px}
+.recommend{color:#175c52;font-weight:800}
+@media(max-width:760px){.transport-options{grid-template-columns:1fr}}
+
+.food-picks{
+  display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:16px 0 2px
+}
+.food-pick{
+  padding:14px 15px;border-radius:15px;background:linear-gradient(135deg,#fff8ec,#fff);
+  border:1px solid #eadbc6
+}
+.food-pick.snack{background:linear-gradient(135deg,#eef7f4,#fff);border-color:#cfe3dc}
+.food-pick .food-type{
+  display:inline-flex;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:850;
+  background:#f5dfbf;color:#7d4b12;margin-bottom:6px
+}
+.food-pick.snack .food-type{background:#d8eee7;color:#165e53}
+.food-pick h3{margin:0 0 4px;font-size:17px}
+.food-pick p{margin:3px 0;color:var(--muted);font-size:13px}
+.food-pick .order{color:var(--ink);font-weight:720}
+.research-note{
+  margin-top:12px;padding:11px 13px;border-radius:13px;background:#f1eef8;
+  border:1px solid #dcd4ef;font-size:13px
+}
+@media(max-width:700px){.food-picks{grid-template-columns:1fr}}
+
+.sources{padding:21px;margin-top:20px}
+.sources p{margin:7px 0;color:var(--muted);font-size:13px}
+.sources a{color:#285d75}
+.footer{margin-top:18px;padding:17px 19px;border-radius:18px;background:var(--navy);color:white}
+.footer p{margin:0;color:rgba(255,255,255,.82)}
+
+@media(max-width:880px){
+  .legend{grid-template-columns:repeat(2,1fr)}
+  .day-head{grid-template-columns:95px 1fr}.hotel-box{grid-column:2}
+  .assumption-grid,.booking-grid,.day-footer{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .page{padding:12px 10px 56px}.hero{padding:25px 19px;border-radius:20px}
+  .legend{grid-template-columns:1fr 1fr}
+  .day{padding:17px}.day-head{grid-template-columns:1fr}
+  .date-box{border-right:0;border-bottom:1px solid var(--line);padding:0 0 9px}
+  .hotel-box{grid-column:auto}.timeline{padding-left:31px}.timeline:before{left:11px}
+  .event:before{left:-27px}.event{padding:16px}
+  .section-title{display:block}.section-title p{margin-top:4px}
+}
+@media print{
+  body{background:#fff}.page{max-width:none;padding:0}.nav{display:none}
+  .hero,.legend,.assumptions,.booking,.day,.sources{box-shadow:none}
+  .day{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header class="hero">
+  <div class="eyebrow">Taiwan South Journey · Action Plan</div>
+  <h1>台湾南部9天8晚｜逐日执行手册</h1>
+  <p class="subtitle">每一天都按“几点出发—坐什么—在哪下—做什么”编排，并为公共交通增加错过后的下一班规律。时刻表基于2026年7月可查官方信息，出发前7天必须再核对。</p>
+  <div class="meta">
+    <span class="pill">2026.09.19–09.27</span>
+    <span class="pill">仙台进・东京成田出</span>
+    <span class="pill">高雄 / 小琉球 / 台南 / 隙顶 / 阿里山</span>
+    <span class="pill">酒店已确定</span>
+  </div>
+  <div class="hero-note">
+    包车与预约接驳没有“每15分钟一班”这种规律。因此本手册会分开写：公共交通标出班距；预约车辆标出迟到后的处理方式和公共替代方案。
+  </div>
+</header>
+
+<nav class="nav" aria-label="日期导航">
+  <a href="#pre">订票准备</a><a href="#map">路线地图</a>
+  <a href="#d0919">9/19</a><a href="#d0920">9/20</a><a href="#d0921">9/21</a>
+  <a href="#d0922">9/22</a><a href="#d0923">9/23</a><a href="#d0924">9/24</a>
+  <a href="#d0925">9/25</a><a href="#d0926">9/26</a><a href="#d0927">9/27</a>
+</nav>
+
+<section class="legend">
+  <div class="legend-item"><span class="dot fixed"></span><span><b>固定时间</b>：航班、船班、开合秀</span></div>
+  <div class="legend-item"><span class="dot estimate"></span><span><b>预计时间</b>：通关、车程、游览</span></div>
+  <div class="legend-item"><span class="dot reserve"></span><span><b>需预约</b>：接驳、包车、活动</span></div>
+  <div class="legend-item"><span class="dot frequency"></span><span><b>错过规律</b>：下一班或替代方式</span></div>
+</section>
+
+<section class="assumptions">
+  <div class="section-title"><h2>目前仍需用订单锁定的4项</h2><p>两个跨城接送均保留公共交通与共乘方案</p></div>
+  <div class="assumption-grid">
+    <div class="assumption">
+      <b>9/20 高雄→东港</b>
+      <span>主方案：捷运到左营＋9127D到东琉线码头；备选：预约车辆到Brio Hotel门口接人。</span>
+    </div>
+    <div class="assumption">
+      <b>9/21 东港→台南</b>
+      <span>主方案：9127D到左营＋高铁到台南＋H31到小西门；备选：东港码头直送台南烟波。</span>
+    </div>
+    <div class="assumption"><b>9/23 唯一包车日</b><span>暂按08:00从台南烟波出发；确认故宫南院、嘉义、隙顶送达及超时费。</span></div>
+    <div class="assumption"><b>小琉球水上活动</b><span>暂按9/20 13:30开始，具体以活动商通知为准。</span></div>
+  </div>
+  <div class="warning">
+    <strong>“酒店门口共乘接驳”不是酒店自营公交。</strong>
+    它是另外预约的共乘车或接送公司，只是可以到酒店门口接人。未预约时不会自动有车。
+  </div>
+</section>
+
+<section class="booking" id="pre">
+  <div class="section-title"><h2>出发前订票顺序</h2><p>公共交通可直接执行，共乘接驳需另行预约</p></div>
+  <div class="booking-grid">
+    <div class="book-item"><b>① 东港↔白沙观光港往返船票</b><span>买东琉线，不买盐埔↔大福港；按护照实名填写。</span></div>
+    <div class="book-item"><b>② 9/20公共交通</b><span>Brio→R9中央公园→R16左营；左营2号出口柜台登记08:00的9127D，08:50到东琉线码头。</span></div>
+    <div class="book-item"><b>③ 9/20共乘备选</b><span>预约Brio Hotel门口→东琉线码头，确认接人时间、行李、是否拼车及迟到等待规则。</span></div>
+    <div class="book-item"><b>④ 9/21公共交通</b><span>东琉线码头→9127D→左营→高铁台南→H31小西门→步行到烟波。</span></div>
+    <div class="book-item"><b>⑤ 9/21共乘备选</b><span>预约东港码头→台南烟波门口，需把回程船班和预计下船时间告知司机。</span></div>
+    <div class="book-item"><b>⑥ 9/23单日包车</b><span>台南烟波→故宫南院→嘉义→隙顶十方山水，确认NT$4,000包含项目。</span></div>
+    <div class="book-item"><b>⑦ 9/24、9/25山线公交</b><span>9/24隙顶上阿里山；9/25阿里山到高铁嘉义站，按网页时刻执行。</span></div>
+    <div class="book-item"><b>⑧ 祝山观日列车</b><span>提前购票，并在9/24下午确认次日最终发车时间。</span></div>
+  </div>
+  <div class="link-row">
+    <a class="link" target="_blank" rel="noopener" href="https://booking.tungliu.com/">东琉线购票</a>
+    <a class="link" target="_blank" rel="noopener" href="https://www.taiwantrip.com.tw/Frontend/Bustime/TimeTable/R0065">9127D时刻表</a>
+    <a class="link" target="_blank" rel="noopener" href="https://www.thsrc.com.tw/">台湾高铁</a>
+    <a class="link" target="_blank" rel="noopener" href="https://busmap.tainan.gov.tw/ebus/pathInfo.jsp?locale=zh_TW&pathId=10262">H31时刻表</a>
+    <a class="link" target="_blank" rel="noopener" href="https://afrts.forest.gov.tw/OT01_1.aspx">阿里山林铁订票</a>
+  </div>
+</section>
+
+
+<section class="route-map" id="map">
+  <div class="section-title">
+    <h2>路线地图｜每天在哪</h2>
+    <p>示意图按台湾南部实际相对位置绘制，方便快速看整条路线</p>
+  </div>
+
+  <div class="route-map-wrap">
+    <div class="map-card">
+      <svg viewBox="0 0 760 760" width="100%" role="img" aria-label="台湾南部旅行路线地图">
+        <defs>
+          <linearGradient id="sea" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#eef7f8"/>
+            <stop offset="100%" stop-color="#f8fcfc"/>
+          </linearGradient>
+          <linearGradient id="land" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#f7f3ea"/>
+            <stop offset="100%" stop-color="#efe6d7"/>
+          </linearGradient>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#d96936"></path>
+          </marker>
+          <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#a7b8bf" flood-opacity="0.45"/>
+          </filter>
+        </defs>
+
+        <!-- background -->
+        <rect x="0" y="0" width="760" height="760" rx="18" fill="url(#sea)"/>
+
+        <!-- taiwan simplified silhouette -->
+        <path d="M453 72
+                 C470 95,486 132,490 170
+                 C494 210,490 249,497 291
+                 C506 341,521 387,516 439
+                 C511 488,487 548,456 598
+                 C428 642,392 677,349 704
+                 C333 714,317 712,307 697
+                 C292 674,287 641,275 613
+                 C261 580,237 548,229 510
+                 C220 469,224 424,219 381
+                 C214 339,203 298,204 258
+                 C206 221,221 181,250 150
+                 C279 119,316 101,359 86
+                 C391 75,425 67,453 72 z"
+              fill="url(#land)" stroke="#cfbea4" stroke-width="3" filter="url(#shadow)"/>
+
+        <!-- route lines -->
+        <polyline points="270,560 210,600 270,560 285,470 315,390 338,330 365,280 285,470 270,560"
+                  fill="none" stroke="#d96936" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+                  marker-end="url(#arrow)"/>
+
+        <!-- location nodes -->
+        <!-- Kaohsiung -->
+        <circle cx="270" cy="560" r="11" fill="#b84740"/>
+        <text x="292" y="548" font-size="21" font-weight="700" fill="#173445">高雄</text>
+        <text x="292" y="574" font-size="16" fill="#58717a">9/19、9/25、9/26、9/27</text>
+
+        <!-- Xiaoliuqiu -->
+        <circle cx="210" cy="600" r="10" fill="#22776e"/>
+        <text x="66" y="598" font-size="21" font-weight="700" fill="#173445">小琉球</text>
+        <text x="66" y="622" font-size="16" fill="#58717a">9/20、9/21上午</text>
+        <line x1="220" y1="596" x2="265" y2="570" stroke="#7ba0ae" stroke-width="2" stroke-dasharray="5 4"/>
+
+        <!-- Tainan -->
+        <circle cx="285" cy="470" r="11" fill="#2a6f8e"/>
+        <text x="308" y="458" font-size="21" font-weight="700" fill="#173445">台南</text>
+        <text x="308" y="484" font-size="16" fill="#58717a">9/21下午、9/22</text>
+
+        <!-- Chiayi -->
+        <circle cx="315" cy="390" r="9" fill="#9a6a2f"/>
+        <text x="338" y="383" font-size="20" font-weight="700" fill="#173445">嘉义／故宫南院</text>
+        <text x="338" y="404" font-size="15" fill="#58717a">9/23参观＋午餐</text>
+
+        <!-- Xiding -->
+        <circle cx="338" cy="330" r="10" fill="#6d5b98"/>
+        <text x="360" y="320" font-size="21" font-weight="700" fill="#173445">隙顶</text>
+        <text x="360" y="345" font-size="16" fill="#58717a">9/23住宿</text>
+
+        <!-- Alishan -->
+        <circle cx="365" cy="280" r="11" fill="#3a8b51"/>
+        <text x="388" y="270" font-size="21" font-weight="700" fill="#173445">阿里山</text>
+        <text x="388" y="295" font-size="16" fill="#58717a">9/24、9/25早晨</text>
+
+        <!-- Donggang -->
+        <circle cx="236" cy="579" r="7" fill="#f0a83b"/>
+        <text x="120" y="560" font-size="18" font-weight="700" fill="#173445">东港</text>
+        <text x="120" y="581" font-size="14" fill="#58717a">9/20去程 / 9/21回程转船</text>
+        <line x1="243" y1="575" x2="264" y2="568" stroke="#7ba0ae" stroke-width="2" stroke-dasharray="5 4"/>
+
+        <!-- Airport -->
+        <circle cx="245" cy="585" r="5" fill="#123447"/>
+        <text x="390" y="610" font-size="18" font-weight="700" fill="#173445">高雄国际机场</text>
+        <text x="390" y="631" font-size="14" fill="#58717a">9/19入境 / 9/27出境</text>
+        <line x1="252" y1="585" x2="382" y2="600" stroke="#7ba0ae" stroke-width="2" stroke-dasharray="5 4"/>
+
+        <!-- mini daily badges -->
+        <g font-size="13" font-weight="700" fill="#fff">
+          <rect x="247" y="530" rx="8" ry="8" width="36" height="20" fill="#b84740"/><text x="255" y="544">9/19</text>
+          <rect x="170" y="628" rx="8" ry="8" width="36" height="20" fill="#22776e"/><text x="178" y="642">9/20</text>
+          <rect x="252" y="445" rx="8" ry="8" width="36" height="20" fill="#2a6f8e"/><text x="260" y="459">9/21</text>
+          <rect x="294" y="445" rx="8" ry="8" width="36" height="20" fill="#2a6f8e"/><text x="302" y="459">9/22</text>
+          <rect x="374" y="323" rx="8" ry="8" width="36" height="20" fill="#6d5b98"/><text x="382" y="337">9/23</text>
+          <rect x="430" y="250" rx="8" ry="8" width="36" height="20" fill="#3a8b51"/><text x="438" y="264">9/24</text>
+          <rect x="250" y="586" rx="8" ry="8" width="36" height="20" fill="#b84740"/><text x="258" y="600">9/25</text>
+          <rect x="292" y="586" rx="8" ry="8" width="36" height="20" fill="#b84740"/><text x="300" y="600">9/26</text>
+          <rect x="334" y="586" rx="8" ry="8" width="36" height="20" fill="#123447"/><text x="342" y="600">9/27</text>
+        </g>
+
+        <!-- title in map -->
+        <text x="30" y="42" font-size="24" font-weight="800" fill="#173445">路线示意图</text>
+        <text x="30" y="67" font-size="15" fill="#58717a">高雄 → 小琉球 → 台南 → 嘉义 → 隙顶 → 阿里山 → 高雄</text>
+      </svg>
+    </div>
+
+    <div class="map-note">
+      <h3>按天看你会在哪</h3>
+      <ul>
+        <li><b>9/19：</b>高雄市区（Brio Hotel）</li>
+        <li><b>9/20：</b>东港转船后到小琉球，住海月民宿</li>
+        <li><b>9/21：</b>上午小琉球，下午回东港并转去台南</li>
+        <li><b>9/22：</b>台南安平＋中西区整天</li>
+        <li><b>9/23：</b>台南出发，参观故宫南院、嘉义午饭，傍晚到隙顶住十方山水</li>
+        <li><b>9/24：</b>隙顶搭A线公交上阿里山，住青山别馆</li>
+        <li><b>9/25：</b>阿里山看日出后下山，经嘉义高铁回高雄，住Hotel Dùa</li>
+        <li><b>9/26：</b>高雄市内：旗津、西子湾、驳二</li>
+        <li><b>9/27：</b>从高雄国际机场飞东京成田</li>
+      </ul>
+
+      <div class="map-legend">
+        <span class="map-pill"><span class="map-dot" style="background:#b84740"></span>高雄据点</span>
+        <span class="map-pill"><span class="map-dot" style="background:#22776e"></span>离岛</span>
+        <span class="map-pill"><span class="map-dot" style="background:#2a6f8e"></span>城市游览</span>
+        <span class="map-pill"><span class="map-dot" style="background:#6d5b98"></span>山区住宿</span>
+        <span class="map-pill"><span class="map-dot" style="background:#3a8b51"></span>阿里山</span>
+      </div>
+
+      <div class="warning" style="margin-top:14px">
+        这是<strong>路线示意图</strong>，重点是让你一眼看懂“哪天在哪”，不是精确导航地图。每天的具体交通仍以各日期章节的详细步骤为准。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DAY 1 -->
+<section class="day" id="d0919">
+  <div class="day-head">
+    <div class="date-box"><b>9/19</b><span>周六｜Day 1</span></div>
+    <div class="day-title">
+      <h2>仙台 → 高雄｜深夜入住与六合夜市</h2>
+      <p>第一目标是顺利进城；夜市只在准点且不累的情况下执行。</p>
+      <div class="day-tags"><span class="tag fixed-t">航班固定</span><span class="tag estimate-t">通关为估算</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>Brio Hotel 比欧致居</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>庄记海产粥｜六合夜市</h3>
+      <p class="order">建议点：海产粥一份＋盐蒸虾，两人分食。</p>
+      <p>适合23:50以后吃热食；只有准点抵达、00:15前能到夜市时执行。</p>
+      <div class="link-row"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E8%8E%8A%E8%A8%98%E6%B5%B7%E7%94%A2%E7%B2%A5%E5%85%AD%E5%90%88%E5%A4%9C%E5%B8%82">地图</a></div>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>郑老牌木瓜牛奶</h3>
+      <p class="order">建议点：木瓜牛奶一杯，两人共享即可。</p>
+      <p>位于六合夜市入口，和庄记同一动线，不额外绕路。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event transport">
+      <div class="time-row"><div class="time">16:00–16:30</div><span class="duration">起飞前2.5–3小时</span></div>
+      <h3>抵达仙台机场</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>先办值机和托运行李</b>护照、订单和台湾酒店地址放在随身包外层。</div></div>
+        <div class="step"><div class="num">2</div><div><b>17:30前进入国际线候机区</b>晚饭尽量在仙台机场解决，不把正式晚饭留到高雄午夜。</div></div>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">19:00–22:10</div><span class="duration">当地时间</span></div>
+      <h3>仙台 → 高雄</h3>
+      <p>台湾比日本慢1小时。落地后按手机自动切换后的台湾时间判断末班捷运。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">22:10–23:10</div><span class="duration">预计50–70分钟</span></div>
+      <h3>入境、取行李、通过海关</h3>
+      <p>不开新业务、不逛免税店。取到行李后直接跟随“MRT／捷运”标志前往机场站。</p>
+      <div class="critical">23:30以后才走出到达大厅，直接认真考虑出租车；不要为了省钱把第一晚变成赶末班车。</div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">23:10–23:40</div><span class="duration">约25–30分钟</span></div>
+      <h3>高雄机场 → Brio Hotel</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>进入R4高雄国际机场站</b>搭红线，方向看“冈山车站”。</div></div>
+        <div class="step"><div class="num">2</div><div><span class="route-chip">R4 高雄国际机场</span> → <span class="route-chip">R9 中央公园</span><b>全程不换乘</b></div></div>
+        <div class="step"><div class="num">3</div><div><b>从3号出口出站</b>Brio Hotel官方指引为步行约50秒。</div></div>
+      </div>
+      <div class="fallback">
+        <b>没赶上这一班：</b>周六23:00–24:00红线官方班距通常不超过15分钟。
+        <span class="freq">≤15分钟</span><br>
+        机场往市区末班车表定00:02；应至少提前2–3分钟进站。错过末班车就坐机场排班出租车。
+      </div>
+      <div class="link-row">
+        <a class="link" target="_blank" rel="noopener" href="https://www.krtc.com.tw/Guide/first_and_last_train?KRTCSLLine=R&KRTCStation=R4">机场站首末班车</a>
+        <a class="link" target="_blank" rel="noopener" href="https://www.briohotel.com/">Brio Hotel</a>
+      </div>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">23:40–00:05</div><span class="duration">入住</span></div>
+      <h3>办理入住、放行李</h3>
+      <p>先问前台第二天早上接驳车能否在酒店门口接人。洗漱不要拖太久，夜市只做轻量宵夜。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">00:05–00:55</div><span class="duration">可取消</span></div>
+      <h3>六合夜市宵夜</h3>
+      <p>从酒店打车约5分钟，或步行约15分钟；夜市一般营业至02:00。只吃1–2样，不安排完整夜市扫街。</p>
+      <div class="fallback">
+        <b>没有按时出门：</b>00:20以后还没离开酒店，就取消夜市，去便利店买水和早餐。
+        <span class="freq">不是必须项目</span>
+      </div>
+    </article>
+
+    <article class="event booking-event">
+      <div class="time-row"><div class="time">01:00前</div><span class="duration">睡前确认</span></div>
+      <h3>确认次日接驳与船票</h3>
+      <label class="check"><input type="checkbox" data-key="d1pickup"><span>接驳公司已确认08:00在Brio Hotel接人</span></label>
+      <label class="check"><input type="checkbox" data-key="d1ferry"><span>东琉线订单、二维码、护照资料已截图</span></label>
+      <label class="check"><input type="checkbox" data-key="d1bag"><span>泳装、防晒、晕船药、充电宝已放进随身包</span></label>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section class="day" id="d0920">
+  <div class="day-head">
+    <div class="date-box"><b>9/20</b><span>周日｜Day 2</span></div>
+    <div class="day-title">
+      <h2>高雄 → 东港 → 小琉球环岛</h2>
+      <p>接驳和船班是当天关键；岛内活动按天气调整。</p>
+      <div class="day-tags"><span class="tag reserve-t">接驳需预约</span><span class="tag fixed-t">船班固定</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>海月民宿</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>相思麵｜小琉球</h3>
+      <p class="order">建议点：相思干麵、炸肉丸、卤味拼盘。</p>
+      <p>安排在环岛前半结束后的午饭，属于小琉球高频排队店；人太多就改附近面店，不等超过30分钟。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>小蝌蚪起司饼</h3>
+      <p class="order">建议点：鸡肉或鲔鱼起司饼。</p>
+      <p>通常需要当天上午电话预订；10:00左右联系，约定水上活动后取餐。没订到就换麻花卷或冰品。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event hotel">
+      <div class="time-row"><div class="time">06:20–06:50／06:45–07:45</div><span class="duration">按交通方案选择</span></div>
+      <h3>退房前准备</h3>
+      <p><b>公共交通：</b>06:50前退房并出门；<b>共乘接驳：</b>可07:45退房，在酒店大堂等车。晕船药按说明提前服用。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">06:50–09:20</div><span class="duration">二选一</span></div>
+      <h3>高雄 → 东琉线码头</h3>
+
+      <div class="transport-options">
+        <div class="transport-option">
+          <span class="option-label">方案A｜公共交通・默认编排</span>
+          <h3>捷运＋9127D大鹏湾琉球线</h3>
+          <ol>
+            <li><b>06:50</b> 从Brio Hotel步行到R9中央公园站。</li>
+            <li>搭红线往冈山方向：<span class="route-chip">R9中央公园</span> → <span class="route-chip">R16左营</span>。</li>
+            <li><b>约07:25</b> 到左营，走2号出口，到“垦丁快线／大鹏湾琉球线”柜台登记班次并领取划位卡。</li>
+            <li><b>08:00</b> 在1楼第1月台搭9127D。</li>
+            <li><b>08:50</b> 在“东琉线码头站”下车。</li>
+          </ol>
+          <p class="recommend">推荐原因：便宜、时刻明确，而且直接停在东琉线码头。</p>
+          <div class="fallback">
+            <b>错过08:00：</b>下一班08:15，再下一班08:30；之后09:00、09:30、10:00。
+            <span class="freq">前3班每15分钟</span>
+          </div>
+        </div>
+
+        <div class="transport-option shuttle">
+          <span class="option-label">方案B｜酒店门口共乘接驳</span>
+          <h3>Brio Hotel门口 → 东港码头</h3>
+          <ol>
+            <li>向接送公司预约，暂以<b>08:00酒店大堂接人</b>为参考。</li>
+            <li>确认车辆会送到“东琉线码头”，不是盐埔港或东港转运站。</li>
+            <li>确认是否拼车、预计车程、行李限制以及等待迟到乘客的规则。</li>
+          </ol>
+          <p>更省体力，少一次捷运和巴士换乘，但价格更高，且实际接人时间由接送公司决定。</p>
+          <div class="fallback no-service">
+            <b>错过共乘：</b>没有固定下一班。
+            <span class="freq">无固定班距</span><br>
+            立即联系公司改车；无法补位时改走公共交通或出租车。
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event booking-event">
+      <div class="time-row"><div class="time">08:50–09:50</div><span class="duration">取票与候船</span></div>
+      <h3>东港码头办理实名验票</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>出示护照和订单</b>姓名必须与线上购票资料一致。</div></div>
+        <div class="step"><div class="num">2</div><div><b>确认到达港口</b>应为小琉球“白沙观光港”。</div></div>
+        <div class="step"><div class="num">3</div><div><b>提前排队登船</b>网络购票不代表可以压线到码头。</div></div>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:00–10:30</div><span class="duration">约25–30分钟</span></div>
+      <h3>东港 → 小琉球白沙观光港</h3>
+      <div class="fallback">
+        <b>错过10:00：</b>当前官方表中下一班通常为10:45，再下一班11:30。
+        <span class="freq">45分钟 / 45分钟</span><br>
+        周日或人潮多时可能加班船，但不要把加班船当作保证。
+      </div>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">10:30–11:00</div><span class="duration">办理岛内交通</span></div>
+      <h3>海月民宿寄存行李、取电动车</h3>
+      <p>海月靠近白沙港。先寄存行李，再完成电动车说明和安全检查；确认第二天退房后能否继续寄存。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">11:00–12:20</div><span class="duration">环岛前半</span></div>
+      <h3>花瓶岩 → 美人洞或杉福生态廊道</h3>
+      <p>第一天只选美人洞、杉福其中一个，避免上午塞太多收费景点。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">12:20–13:20</div><span class="duration">午饭</span></div>
+      <h3>相思麵午餐</h3>
+      <p>点干麵、炸肉丸和少量卤味；排队超过30分钟就改附近面店。</p>
+    </article>
+
+    <article class="event booking-event">
+      <div class="time-row"><div class="time">13:30–15:30</div><span class="duration">预约活动｜暂定</span></div>
+      <h3>浮潜／透明独木舟／玻璃船三选一</h3>
+      <p>集合地点和报到时间以活动商通知为准，通常需提前20–30分钟报到。</p>
+      <div class="fallback no-service">
+        <b>迟到或天气取消：</b>水上活动没有固定下一班。
+        <span class="freq">联系活动商</span><br>
+        先询问能否改到当天晚一场或9/21上午；不能改就把时间用于乌鬼洞、山猪沟或咖啡店。
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">16:00–18:15</div><span class="duration">环岛后半</span></div>
+      <h3>取小蝌蚪起司饼 → 乌鬼洞 → 落日亭</h3>
+      <p>16:00左右继续骑行，17:20前到落日亭附近。9月日落时间会略有变化，出发前一周再校正。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">18:30以后</div><span class="duration">晚饭与散步</span></div>
+      <h3>岛上晚饭、白沙港夜间散步</h3>
+      <p>回民宿前确认电动车充电方式，并查看第二天早上风浪与回程船班公告。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 3 -->
+<section class="day" id="d0921">
+  <div class="day-head">
+    <div class="date-box"><b>9/21</b><span>周一｜Day 3</span></div>
+    <div class="day-title">
+      <h2>小琉球 → 东港 → 台南老城区</h2>
+      <p>回程船班错过一次，台南下午会整体推迟约1.5小时。</p>
+      <div class="day-tags"><span class="tag fixed-t">回程船班</span><span class="tag reserve-t">东港接送需预约</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>台南烟波大饭店</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>矮仔成虾仁饭｜海安路</h3>
+      <p class="order">建议点：虾仁饭、煎鸭蛋、鸭蛋汤或凉拌猪肝。</p>
+      <p>周一营业，和烟波、海安路、国华街在同一区域；份量不大，需要加汤和小菜才算正餐。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>林家白糖粿・蕃薯椪</h3>
+      <p class="order">建议点：白糖粿一份，两人分食。</p>
+      <p>放在国华街散步途中，不特地排很长队；超过20分钟就换附近豆花。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event hotel">
+      <div class="time-row"><div class="time">07:30–09:20</div><span class="duration">早餐与补逛</span></div>
+      <h3>早餐、海边散步、退房</h3>
+      <p>不安排远距离景点。09:20前回民宿取行李、还电动车。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:00–10:30</div><span class="duration">提前候船</span></div>
+      <h3>到白沙观光港排队</h3>
+      <p>目标搭10:30小琉球→东港船班，至少提前30分钟到码头。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:30–11:00</div><span class="duration">约25–30分钟</span></div>
+      <h3>小琉球 → 东港</h3>
+      <div class="fallback">
+        <b>错过10:30：</b>当前官方表中下一班为12:00，再下一班14:00。
+        <span class="freq">90分钟 / 120分钟</span><br>
+        若改搭12:00，必须通知东港接送司机，并把台南赤崁楼改为次日或取消。
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">11:00–14:40</div><span class="duration">二选一</span></div>
+      <h3>东港码头 → 台南烟波大饭店</h3>
+
+      <div class="transport-options">
+        <div class="transport-option">
+          <span class="option-label">方案A｜公共交通・默认编排</span>
+          <h3>9127D＋高铁＋H31</h3>
+          <ol>
+            <li><b>11:00左右</b> 下船后，走到“东琉线码头站”。</li>
+            <li>目标搭<b>11:43</b>的9127D，<b>12:33</b>抵达高铁左营站。</li>
+            <li>从左营搭下一班北上高铁到“高铁台南站”，车程约12–15分钟。</li>
+            <li>从高铁台南站2号出口搭H31，至“小西门（西门路）”下车。</li>
+            <li>右转和意路约100米，再左转永福路，步行到台南烟波。</li>
+          </ol>
+          <div class="fallback">
+            <b>错过11:43的9127D：</b>下一班12:13，12:43还有一班，基本每30分钟。
+            <span class="freq">约30分钟</span><br>
+            H31下午常见13:20、13:35、13:50、14:20、14:35、14:50发车，通常15–30分钟一班；高铁旅客可按规定免费搭乘。
+          </div>
+          <p class="recommend">预计14:15–14:40抵达酒店，网页后续景点按这个较慢但省钱的方案编排。</p>
+        </div>
+
+        <div class="transport-option shuttle">
+          <span class="option-label">方案B｜码头直达酒店共乘</span>
+          <h3>东琉线码头 → 台南烟波门口</h3>
+          <ol>
+            <li>预约时提供9/21回程船班、两人行李数量和台南烟波地址。</li>
+            <li>建议约<b>11:15–11:30</b>在码头接人，给下船和取行李留缓冲。</li>
+            <li>直接送到台南烟波大饭店门口，预计约1.5–2小时。</li>
+          </ol>
+          <p>优点是少拖行李、少三次换乘，通常能比公共交通早约1小时抵达。</p>
+          <div class="fallback no-service">
+            <b>错过共乘：</b>没有固定下一班。
+            <span class="freq">无固定班距</span><br>
+            联系司机延后；无法协调时，立即改走9127D＋高铁＋H31。
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">14:50–15:10</div><span class="duration">出租车</span></div>
+      <h3>酒店 → 赤崁楼</h3>
+      <p>台南两人出行以出租车节省时间，不把市区公交作为主方案。</p>
+      <p class="note">若选择码头直达酒店共乘并提前到达，可把本段及后续景点整体提前约60分钟。</p>
+      <div class="fallback"><b>没有叫到车：</b>换用Uber或请酒店前台叫车，通常无需等固定班次。<span class="freq">即时叫车</span></div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">15:10–16:15</div><span class="duration">约65分钟</span></div>
+      <h3>赤崁楼及周边</h3>
+      <p>以建筑和历史区域为主，不在纪念品店停太久。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">16:15–18:40</div><span class="duration">边走边吃</span></div>
+      <h3>永乐市场 → 国华街</h3>
+      <p>虾仁饭、米糕、碗粿、豆花分食。热门店售完即止，不必执着单一店家。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">18:40–20:45</div><span class="duration">夜间散步</span></div>
+      <h3>神农街 → 海安路</h3>
+      <p>夜景和小店为主。20:45左右打车回酒店，避免第一天在台南走得过量。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 4 -->
+<section class="day" id="d0922">
+  <div class="day-head">
+    <div class="date-box"><b>9/22</b><span>周二｜Day 4</span></div>
+    <div class="day-title">
+      <h2>台南安平＋市区完整一日</h2>
+      <p>上午安平，下午回酒店周边，路线不来回折返。</p>
+      <div class="day-tags"><span class="tag estimate-t">出租车为主</span><span class="tag fixed-t">景点开放时间</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>台南烟波大饭店</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>文章牛肉汤｜安平总店</h3>
+      <p class="order">建议点：牛肉汤、肉燥饭、炒牛肉或牛肉燥饭。</p>
+      <p>店面较大、适合把午饭吃完整；位于安平主游览区，不需要返回市中心。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>同记安平豆花｜安平总店</h3>
+      <p class="order">建议点：传统白豆花或竹炭黑豆花。</p>
+      <p>牛肉汤后安排一碗冰凉甜品，再打车回市区。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event food">
+      <div class="time-row"><div class="time">07:00–08:10</div><span class="duration">早餐</span></div>
+      <h3>牛肉汤早餐</h3>
+      <p>选酒店附近或顺路店家，08:10前回酒店门口叫车。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">08:20–08:45</div><span class="duration">出租车约20–25分钟</span></div>
+      <h3>烟波大饭店 → 安平树屋</h3>
+      <p>先去08:30开放的安平树屋，避开中午闷热和人流。</p>
+      <div class="fallback">
+        <b>公共交通备选：</b>先到台南转运站搭98府城台江线；当前常见发车为08:20、09:20、10:20、11:20，约每小时一班，到安平古堡约53分钟。
+        <span class="freq">约60分钟</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">08:45–10:00</div><span class="duration">约75分钟</span></div>
+      <h3>安平树屋＋德记洋行</h3>
+      <p>官方开放时间通常为08:30–17:30。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">10:05–11:10</div><span class="duration">约65分钟</span></div>
+      <h3>安平古堡</h3>
+      <p>步行前往；目前官方开放时间通常为10:00–17:10。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div>
+      <h3>文章牛肉汤 → 同记安平豆花</h3>
+      <p>先把牛肉汤作为当天正餐，再去同记豆花；13:00左右叫车离开。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">13:00–13:25</div><span class="duration">出租车</span></div>
+      <h3>安平 → 台南孔庙</h3>
+      <div class="fallback"><b>98路回程：</b>班距不是地铁式密集，通常约1小时，部分时段间隔更长；两人建议直接打车。<span class="freq">约60–100分钟</span></div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">13:30–14:25</div><span class="duration">约55分钟</span></div>
+      <h3>台南孔庙与府中街</h3>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">14:35–15:35</div><span class="duration">约60分钟</span></div>
+      <h3>司法博物馆</h3>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">15:45–16:40</div><span class="duration">约55分钟</span></div>
+      <h3>林百货</h3>
+      <p>看建筑、屋顶神社和伴手礼，不必把购物拖到晚上。</p>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">16:45–18:00</div><span class="duration">休息</span></div>
+      <h3>回烟波休息或使用酒店设施</h3>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">18:00以后</div><span class="duration">自由晚饭</span></div>
+      <h3>中西区晚饭／当日营业夜市</h3>
+      <p>当天夜市需按星期二实际营业情况选择，出发前一周再确认。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 5 -->
+<section class="day" id="d0923">
+  <div class="day-head">
+    <div class="date-box"><b>9/23</b><span>周三｜Day 5</span></div>
+    <div class="day-title">
+      <h2>台南 → 故宫南院 → 嘉义 → 隙顶｜唯一包车日</h2>
+      <p>利用唯一的包车日解决故宫南院、嘉义午饭、行李和二延平日落。</p>
+      <div class="day-tags"><span class="tag reserve-t">唯一包车日</span><span class="tag fixed-t">故宫南院09:00开放</span><span class="tag estimate-t">日落依天气</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>十方山水 SunSweet House</b></div>
+  </div>
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>林聪明沙锅鱼头｜嘉义</h3>
+      <p class="order">建议点：沙锅菜＋鱼肉、火鸡肉饭，两人不要直接点整颗大鱼头。</p>
+      <p>故宫南院结束后进入嘉义市区午饭；热门时可能等位，因此把御香屋安排在等待期间。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>源兴御香屋｜葡萄柚绿茶</h3>
+      <p class="order">建议点：葡萄柚绿茶，微糖或半糖。</p>
+      <p>与林聪明同属嘉义市中心，适合等位时外带，不单独绕路。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event hotel">
+      <div class="time-row"><div class="time">07:00–07:50</div><span class="duration">早餐与退房</span></div>
+      <h3>烟波早餐、整理山上行李</h3>
+      <p>薄羽绒、防风外套、雨具放随身包；07:50前到酒店大堂。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">08:00–09:15</div><span class="duration">包车｜唯一一天</span></div>
+      <h3>台南烟波 → 国立故宫博物院南部院区</h3>
+      <p>目的地是嘉义县太保市故宫大道888号。</p>
+      <div class="fallback no-service">
+        <b>包车迟到：</b>没有固定下一班。
+        <span class="freq">联系司机</span><br>
+        迟到30分钟内压缩午饭；迟到超过1小时，将故宫参观缩短至约2小时，但仍保留二延平日落。
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">09:20–11:50</div><span class="duration">约2.5小时</span></div>
+      <h3>故宫南院</h3>
+      <p>周三展厅通常09:00–17:00开放。先看主要常设展与当期重点展，不把园区户外部分走得过长。</p>
+      <div class="fallback">
+        <b>参观超时：</b>11:50必须准备离馆。
+        <span class="freq">固定离开点</span>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">11:50–12:25</div><span class="duration">包车</span></div>
+      <h3>故宫南院 → 嘉义市区</h3>
+      <p>直接前往林聪明附近，不再增加檜意森活村等景点。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">12:25–13:35</div><span class="duration">正餐＋小吃</span></div>
+      <h3>林聪明沙锅鱼头＋御香屋</h3>
+      <p>先取号，再买御香屋。若等位超过40分钟，改吃附近火鸡肉饭，13:35必须上车。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">13:35–15:10</div><span class="duration">包车上山</span></div>
+      <h3>嘉义 → 十方山水</h3>
+      <p>途中最多安排一次10分钟便利店补给，不再增加石棹或奋起湖。</p>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">15:10–15:30</div><span class="duration">入住</span></div>
+      <h3>十方山水寄存行李</h3>
+      <p>请民宿确认第二天最近的公交站，并预约送到“隙顶站”的短接驳。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">15:35–17:55</div><span class="duration">步道与日落</span></div>
+      <h3>二延平步道</h3>
+      <p>优先走主要观景段，不强求完整步道；17:10前到日落视野较好的位置。</p>
+      <div class="fallback no-service">
+        <b>15:50以后才开始走：</b>只去最近观景平台。
+        <span class="freq">日落时间固定</span>
+      </div>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">18:20以后</div><span class="duration">简便晚饭</span></div>
+      <h3>民宿晚饭或预订餐食</h3>
+      <p>当天正式正餐已安排在嘉义；山区晚餐以民宿套餐或简单餐食为主。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 6 -->
+<section class="day" id="d0924">
+  <div class="day-head">
+    <div class="date-box"><b>9/24</b><span>周四｜Day 6</span></div>
+    <div class="day-title">
+      <h2>隙顶 → 阿里山｜台湾好行A线</h2>
+      <p>不包车。核心是带着行李赶上10:50左右经过隙顶的公交。</p>
+      <div class="day-tags"><span class="tag fixed-t">公交时刻固定</span><span class="tag estimate-t">中途站无保留座位</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>青山别馆</b></div>
+  </div>
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>阿里山美食馆｜园区内午饭</h3>
+      <p class="order">建议点：山菜、竹笋、热汤或简餐，选择出餐快的组合。</p>
+      <p>官方园区资料列出的午间营业时段为11:00–14:00，刚好衔接12:00左右抵达。</p>
+      <div class="link-row"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%BE%8E%E9%A3%9F%E9%A4%A8">地图</a></div>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>神木区马告香肠</h3>
+      <p class="order">建议点：马告香肠一份，两人分食。</p>
+      <p>把它放在森林步道途中，不需要特地绕路；摊位属于现场型小吃，是否营业受天气和客流影响。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event food">
+      <div class="time-row"><div class="time">07:00–08:30</div><span class="duration">早餐与晨景</span></div>
+      <h3>十方山水早餐、看云海</h3>
+      <p>09:15前完成退房。把所有大件行李控制在司机能接受的范围内；官方提醒山区公交行李空间有限。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">09:40–10:20</div><span class="duration">民宿短接驳</span></div>
+      <h3>十方山水 → 隙顶公交站</h3>
+      <p>提前请民宿送到“隙顶”站，至少提前20分钟候车。不要拖着行李临时走山路找站牌。</p>
+      <div class="fallback no-service">
+        <b>民宿不能送：</b>前一晚预约当地出租车。
+        <span class="freq">无巡游车保证</span>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:50–12:00</div><span class="duration">台湾好行7329 A线</span></div>
+      <h3>隙顶 → 阿里山转运站</h3>
+      <p>目标搭09:30从高铁嘉义站始发、约10:50经过隙顶、12:00抵达阿里山的班次。可刷悠游卡／一卡通。</p>
+      <div class="critical">中途站不能预约座位，始发站乘客优先；连假前一天可能客满。请民宿协助确认站点与当天公车动态。</div>
+      <div class="fallback">
+        <b>没上到10:50班次：</b>下一班约11:30经过隙顶、12:40到阿里山；再下一班约12:20经过，14:05到阿里山。
+        <span class="freq">40分钟 / 50分钟</span><br>
+        改搭11:30时仍能完成森林主路线；改搭12:20时取消沼平线，改走住宿区附近短路线。
+      </div>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">12:00–12:20</div><span class="duration">寄存行李</span></div>
+      <h3>阿里山转运站 → 青山别馆</h3>
+      <p>步行进入住宿区寄存行李，先不办理复杂手续。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">12:20–13:05</div><span class="duration">正餐</span></div>
+      <h3>阿里山美食馆</h3>
+      <p>以热汤、蔬菜和主食为主，13:05离开前往阿里山车站。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">13:15–13:30</div><span class="duration">买支线票</span></div>
+      <h3>阿里山车站 → 沼平线</h3>
+      <p>目标搭13:30前后的沼平线。</p>
+      <div class="fallback">
+        <b>错过沼平线：</b>下午通常约30分钟一班。
+        <span class="freq">约30分钟</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">13:30–16:10</div><span class="duration">森林主路线</span></div>
+      <h3>沼平 → 姐妹潭 → 受镇宫 → 巨木群 → 神木站</h3>
+      <p>一路步行到神木站，不走回头路；途中把马告香肠作为小吃。15:45前到神木站候车。</p>
+      <div class="fallback">
+        <b>错过神木线：</b>下午通常约30分钟一班，末班时间需当天再确认。
+        <span class="freq">约30分钟</span>
+      </div>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">16:30–17:30</div><span class="duration">入住</span></div>
+      <h3>青山别馆办理入住</h3>
+    </article>
+
+    <article class="event booking-event">
+      <div class="time-row"><div class="time">16:30以后</div><span class="duration">必须确认</span></div>
+      <h3>确认祝山线及次日10:10阿里山A线</h3>
+      <p>查看次日日出列车最终发车时间；同时确认已预约10:10阿里山→高铁嘉义站的A线座位，并在发车前10分钟完成报到。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">18:00以后</div><span class="duration">简便晚饭</span></div>
+      <h3>园区晚饭、早睡</h3>
+      <p>今天推荐正餐已经安排在午间；晚上以青山别馆或商店街简餐为主，21:30前休息。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 7 -->
+<section class="day" id="d0925">
+  <div class="day-head">
+    <div class="date-box"><b>9/25</b><span>周五｜Day 7</span></div>
+    <div class="day-title">
+      <h2>阿里山日出 → 嘉义高铁 → 高雄</h2>
+      <p>不包车。10:10巴士和后续高铁决定下午能否顺利逛港区。</p>
+      <div class="day-tags"><span class="tag fixed-t">10:10巴士</span><span class="tag reserve-t">建议预约座位</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>Hotel Dùa</b></div>
+  </div>
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>鸭肉珍｜盐埕</h3>
+      <p class="order">建议点：鸭肉饭、烟熏鸭肉切盘、下水汤或综合汤。</p>
+      <p>离驳二和盐埕埔站近，适合港区夜景结束后吃；米其林指南仍有收录。</p>
+      <div class="link-row"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E9%B4%A8%E8%82%89%E7%8F%8D%E4%BA%94%E7%A6%8F%E5%9B%9B%E8%B7%AF">地图</a></div>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>高雄婆婆冰｜盐埕</h3>
+      <p class="order">建议点：综合水果冰、李咸冰或番茄切盘。</p>
+      <p>就在鸭肉珍附近，正餐后顺路，不需要再换区域。</p>
+      <div class="link-row"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%A9%86%E5%A9%86%E5%86%B0%E6%97%97%E8%89%A6%E5%BA%97">地图</a></div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event transport">
+      <div class="time-row"><div class="time">约04:30–05:10</div><span class="duration">按公告调整</span></div>
+      <h3>起床、步行到阿里山车站、搭祝山线</h3>
+      <p>原则是列车开车前30–40分钟到车站。</p>
+      <div class="fallback no-service">
+        <b>错过祝山线：</b>通常没有可用的固定下一班。
+        <span class="freq">无固定补班</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">约05:40–06:20</div><span class="duration">日出</span></div>
+      <h3>祝山／对高岳观景区域</h3>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">06:20–07:10</div><span class="duration">观日回程列车</span></div>
+      <h3>返回阿里山站</h3>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">07:15–08:35</div><span class="duration">早餐与退房</span></div>
+      <h3>青山别馆早餐、取行李</h3>
+      <p>09:30前到阿里山转运站附近候车，不再增加上午森林景点。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:10–13:10</div><span class="duration">台湾好行7329 A线</span></div>
+      <h3>阿里山 → 高铁嘉义站</h3>
+      <p>此班经奋起湖，车程约3小时。阿里山是始发站，可以提前预约座位；最迟发车前10分钟完成QR报到。</p>
+      <div class="fallback">
+        <b>错过10:10：</b>下一班12:00出发，约15:00到高铁嘉义；再下一班13:30出发，约16:10到。
+        <span class="freq">110分钟 / 90分钟</span><br>
+        错过10:10后取消9/25驳二，港区全部放到9/26。
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">约13:30–14:10</div><span class="duration">台湾高铁</span></div>
+      <h3>高铁嘉义 → 左营</h3>
+      <p>实际班次等9月时刻开放后选定。一般车程约30分钟，建议购买预留20分钟换乘缓冲的班次。</p>
+      <div class="fallback">
+        <b>没赶上原高铁：</b>嘉义至左营白天通常有后续列车可改搭，等待成本多为约20–40分钟。
+        <span class="freq">约20–40分钟</span>
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">14:10–14:40</div><span class="duration">高雄捷运红线</span></div>
+      <h3>R16左营 → R10美丽岛</h3>
+      <p>往小港方向，Hotel Dùa靠近美丽岛站6号出口。</p>
+      <div class="fallback"><b>错过捷运：</b>白天约4–8分钟一班。<span class="freq">约4–8分钟</span></div>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">14:40–15:35</div><span class="duration">入住与休息</span></div>
+      <h3>Hotel Dùa</h3>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">15:40–16:05</div><span class="duration">橘线</span></div>
+      <h3>美丽岛 → 盐埕埔</h3>
+      <p><span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O2 盐埕埔</span>，往哈玛星方向。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">16:10–19:15</div><span class="duration">驳二＋大港桥</span></div>
+      <h3>驳二艺术特区 → 19:00开合秀</h3>
+      <p>由大勇仓库向大义仓库走，18:35前到大港桥。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">19:15–20:00</div><span class="duration">爱河湾夜景</span></div>
+      <h3>大港桥 → 高雄流行音乐中心</h3>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">20:05–21:20</div><span class="duration">正餐＋小吃</span></div>
+      <h3>鸭肉珍 → 高雄婆婆冰</h3>
+      <p>两家集中在盐埕区域。鸭肉珍若排队过长，直接改附近鸭肉饭，不影响后续回酒店。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 8 -->
+<section class="day" id="d0926">
+  <div class="day-head">
+    <div class="date-box"><b>9/26</b><span>周六｜Day 8</span></div>
+    <div class="day-title">
+      <h2>旗津＋西子湾＋驳二完整一日</h2>
+      <p>上午旗津，下午西子湾和驳二；周六驳二营业至晚间。</p>
+      <div class="day-tags"><span class="tag fixed-t">渡轮与开合秀</span><span class="tag estimate-t">市内交通</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>Hotel Dùa</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>旗津万二海产店</h3>
+      <p class="order">建议点：两人选3道小份海鲜＋炒饭或汤，先问清价格和份量。</p>
+      <p>午饭直接在旗津解决，不坐渡轮回市区找餐厅；若只想简单吃，可改老街海鲜面。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃</span>
+      <h3>椪嫂蕃薯椪</h3>
+      <p class="order">建议点：蕃薯椪2个。</p>
+      <p>从旗津轮渡站步行可达，常需现炸等待10–15分钟，放在上午逛老街时购买。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event food">
+      <div class="time-row"><div class="time">07:30–08:20</div><span class="duration">早餐</span></div>
+      <h3>Hotel Dùa早餐</h3>
+      <p>带防晒、帽子、水和轻便雨具；旗津上午日晒明显。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">08:30–08:50</div><span class="duration">橘线4站</span></div>
+      <h3>美丽岛 → 哈玛星</h3>
+      <p><span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O1 哈玛星</span>，往哈玛星方向。</p>
+      <div class="fallback"><b>错过捷运：</b>白天通常约4–8分钟一班。<span class="freq">约4–8分钟</span></div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">08:50–09:20</div><span class="duration">步行＋候船</span></div>
+      <h3>哈玛星站 → 鼓山轮渡站</h3>
+      <p>按地图步行约10–15分钟；使用一卡通／悠游卡直接刷卡搭船。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">约09:20–09:30</div><span class="duration">短程渡轮</span></div>
+      <h3>鼓山 → 旗津</h3>
+      <div class="fallback">
+        <b>错过渡轮：</b>繁忙时通常约5–7分钟一班，非高峰约10–15分钟；周末会按人流调度。
+        <span class="freq">约5–15分钟</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">09:30–12:30</div><span class="duration">旗津游览</span></div>
+      <h3>旗津老街 → 天后宫 → 星空隧道 → 灯塔／炮台</h3>
+      <p>灯塔和炮台有上坡路；天气太热时减少步行，改租自行车或叫车。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">12:30–13:30</div><span class="duration">午饭</span></div>
+      <h3>旗津海鲜或老街小吃</h3>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">13:30–14:00</div><span class="duration">返程渡轮</span></div>
+      <h3>旗津 → 鼓山</h3>
+      <div class="fallback"><b>下一班规律：</b>同样约5–7分钟高峰、10–15分钟非高峰。<span class="freq">约5–15分钟</span></div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">14:05–15:30</div><span class="duration">西子湾</span></div>
+      <h3>西子湾海岸／打狗英国领事馆周边</h3>
+      <p>是否进入领事馆根据天气和体力现场决定。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">15:30–15:50</div><span class="duration">步行或轻轨</span></div>
+      <h3>哈玛星 → 驳二蓬莱／大义区</h3>
+      <div class="fallback">
+        <b>轻轨规律：</b>周末14:00–18:00通常约10分钟一班，其他时段约15分钟。
+        <span class="freq">10–15分钟</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">16:00–18:40</div><span class="duration">驳二白天版</span></div>
+      <h3>室内展览、仓库商店、铁道景观</h3>
+      <p>周六当前通常营业至20:00，因此16:00抵达仍有充足时间。</p>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">19:00–19:15</div><span class="duration">可选补看</span></div>
+      <h3>大港桥开合秀</h3>
+      <p>如果9/25已经完整看过，可跳过，直接去盐埕吃晚饭。</p>
+    </article>
+
+    <article class="event food">
+      <div class="time-row"><div class="time">19:30–21:15</div><span class="duration">晚饭</span></div>
+      <h3>盐埕晚饭 → 美丽岛</h3>
+      <p>从盐埕埔搭橘线回美丽岛，或直接打车回Hotel Dùa。</p>
+    </article>
+  </div>
+</section>
+
+<!-- DAY 9 -->
+<section class="day" id="d0927">
+  <div class="day-head">
+    <div class="date-box"><b>9/27</b><span>周日｜Day 9</span></div>
+    <div class="day-title">
+      <h2>高雄 → 东京成田</h2>
+      <p>14:00国际航班，11:00左右抵达机场，不安排远距离景点。</p>
+      <div class="day-tags"><span class="tag fixed-t">航班固定</span><span class="tag estimate-t">捷运高频</span></div>
+    </div>
+    <div class="hotel-box"><span>住宿</span><b>—</b></div>
+  </div>
+
+
+  <div class="food-picks">
+    <div class="food-pick">
+      <span class="food-type">今日正餐</span>
+      <h3>Hotel Dùa étage15早餐</h3>
+      <p class="order">早餐供应目前为06:30–10:00，07:30开始最从容。</p>
+      <p>返程日不再为外部餐厅增加交通风险，早餐直接在酒店解决。</p>
+    </div>
+    <div class="food-pick snack">
+      <span class="food-type">今日小吃／伴手礼</span>
+      <h3>不二緻果・真芋头</h3>
+      <p class="order">建议9/26提前购买或预订，9/27带去机场吃。</p>
+      <p>芋头蛋糕需要冷藏和注意携带时间；不想处理冷藏就改买绿豆酥。</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <article class="event food">
+      <div class="time-row"><div class="time">07:30–08:30</div><span class="duration">早餐</span></div>
+      <h3>Hotel Dùa早餐</h3>
+    </article>
+
+    <article class="event">
+      <div class="time-row"><div class="time">08:40–09:45</div><span class="duration">酒店附近</span></div>
+      <h3>美丽岛光之穹顶／最后购买伴手礼</h3>
+      <p>只在步行范围活动，09:45必须回酒店。</p>
+    </article>
+
+    <article class="event hotel">
+      <div class="time-row"><div class="time">09:45–10:20</div><span class="duration">退房</span></div>
+      <h3>整理行李、退房</h3>
+      <p>检查护照、钱包、充电器、退税／购物凭证。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">10:25–10:55</div><span class="duration">红线直达</span></div>
+      <h3>Hotel Dùa → 高雄国际机场</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>步行至R10美丽岛站</b>Hotel Dùa靠近6号出口。</div></div>
+        <div class="step"><div class="num">2</div><div><b>搭红线往“小港”方向</b><span class="route-chip">R10 美丽岛</span> → <span class="route-chip">R4 高雄国际机场</span></div></div>
+      </div>
+      <div class="fallback">
+        <b>错过捷运：</b>白天通常约4–8分钟一班。
+        <span class="freq">约4–8分钟</span><br>
+        最迟11:00还没离开酒店，就直接叫出租车去机场，不再等捷运。
+      </div>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">11:00–13:20</div><span class="duration">国际航班手续</span></div>
+      <h3>值机、托运行李、安检、出境</h3>
+      <p>完成手续后再吃午饭和购物。13:20前到登机口附近。</p>
+    </article>
+
+    <article class="event transport">
+      <div class="time-row"><div class="time">14:00–18:30</div><span class="duration">高雄 → 东京成田</span></div>
+      <h3>返程</h3>
+    </article>
+  </div>
+</section>
+
+<section class="sources">
+  <div class="section-title"><h2>官方时刻与复查入口</h2><p>出发前7天逐项重查</p></div>
+  <p>
+    <a target="_blank" rel="noopener" href="https://www.krtc.com.tw/">高雄捷运</a> ·
+    <a target="_blank" rel="noopener" href="https://booking.tungliu.com/">东琉线订票</a> ·
+    <a target="_blank" rel="noopener" href="https://www.tungliu.com/">东琉线班表</a> ·
+    <a target="_blank" rel="noopener" href="https://www.twtainan.net/file/31177/">台南98府城台江线</a> ·
+    <a target="_blank" rel="noopener" href="https://www.taiwantrip.com.tw/Frontend/Route/Select_p?RouteID=R0007">台湾好行阿里山A线</a> ·
+    <a target="_blank" rel="noopener" href="https://afrts.forest.gov.tw/OT01_1.aspx">阿里山林铁订票</a> ·
+    <a target="_blank" rel="noopener" href="https://pier2.org/">驳二艺术特区</a> ·
+    <a target="_blank" rel="noopener" href="https://kcs.kcg.gov.tw/Content_List.aspx?n=2EDF685BBC9D2857">高雄轮船</a>
+  </p>
+  <p>船班可能因台风、风浪或人潮调整；祝山列车时刻需以前一天下午公告为准；山区公交不是严格等间隔，网页中的班距是帮助判断等待成本，不应替代当天官方时刻表。</p>
+</section>
+
+<footer class="footer">
+  <p>版本：详细执行版 v5。9月20日与9月21日均已加入“公共交通／酒店门口共乘接驳”两种方案。只有9月23日包车。仍需用实际订单替换：高雄→东港接驳、东港→台南接送、9月23日包车上车时间、小琉球水上活动场次。餐厅营业时间和店休日需在出发前一周再次确认。</p>
+</footer>
+
+</main>
+<script>
+document.querySelectorAll('[data-key]').forEach(box=>{
+  const key='taiwan-detailed-'+box.dataset.key;
+  box.checked=localStorage.getItem(key)==='1';
+  box.closest('.check').classList.toggle('done',box.checked);
+  box.addEventListener('change',()=>{
+    localStorage.setItem(key,box.checked?'1':'0');
+    box.closest('.check').classList.toggle('done',box.checked);
+  });
+});
+</script>
+</body>
+</html>
