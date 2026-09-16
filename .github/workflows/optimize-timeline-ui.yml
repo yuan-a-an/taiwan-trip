@@ -1,0 +1,94 @@
+name: Optimize itinerary timeline UI once
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add semantic timeline labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''
+          /* 时间轴节点类型：让“游玩 / 吃饭 / 通勤 / 酒店 / 预约 / 手续”一眼可辨 */
+          .time-row{justify-content:flex-start;flex-wrap:wrap;align-items:center}.time-row .duration{margin-left:auto}
+          .event-kind{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:850;line-height:1.25;white-space:nowrap;border:1px solid transparent}
+          .event.kind-play{border-left:4px solid var(--blue);background:linear-gradient(90deg,rgba(36,109,140,.045),#fff 18%)}
+          .event.kind-transport{border-left:4px solid var(--red);background:linear-gradient(90deg,rgba(191,79,71,.05),#fff 18%)}
+          .event.kind-food{border-left:4px solid var(--orange);background:linear-gradient(90deg,rgba(221,121,56,.055),#fff 18%)}
+          .event.kind-hotel{border-left:4px solid var(--teal);background:linear-gradient(90deg,rgba(33,120,111,.05),#fff 18%)}
+          .event.kind-booking{border-left:4px solid var(--violet);background:linear-gradient(90deg,rgba(113,95,157,.05),#fff 18%)}
+          .event.kind-procedure{border-left:4px solid #607583;background:linear-gradient(90deg,rgba(96,117,131,.055),#fff 18%)}
+          .event.kind-play .event-kind{background:#e3eef5;color:#275872;border-color:#cadde7}
+          .event.kind-transport .event-kind{background:#fde3df;color:#96342e;border-color:#f2c8c3}
+          .event.kind-food .event-kind{background:#fff0df;color:#99511f;border-color:#f0d5b8}
+          .event.kind-hotel .event-kind{background:#dff1ed;color:#176158;border-color:#c7e1da}
+          .event.kind-booking .event-kind{background:#ece8f7;color:#594b82;border-color:#dcd4ed}
+          .event.kind-procedure .event-kind{background:#edf0f1;color:#4f6571;border-color:#d6dee1}
+          .event.kind-procedure:before{border-color:#607583}
+          @media(max-width:760px){.time-row{gap:8px}.time-row .duration{margin-left:0}.event-kind{font-size:11px;padding:4px 8px}.event{padding-left:15px}}
+          '''
+          css_marker='@media(max-width:760px){.ticket-grid{grid-template-columns:1fr}.food-backup-modal'
+          if 'event.kind-play .event-kind' not in s:
+              if css_marker not in s:
+                  raise SystemExit('CSS marker not found')
+              s=s.replace(css_marker, css+css_marker, 1)
+
+          js='''
+            // 给每个时间轴节点加“类型”标签，并让卡片边框颜色与类型一致。
+            const kindDefs={
+              transport:{label:'🚕 通勤',cls:'kind-transport'},
+              food:{label:'🍜 吃饭',cls:'kind-food'},
+              hotel:{label:'🏨 酒店',cls:'kind-hotel'},
+              booking:{label:'🎫 预约',cls:'kind-booking'},
+              procedure:{label:'🧾 手续',cls:'kind-procedure'},
+              play:{label:'🎯 游玩',cls:'kind-play'}
+            };
+            document.querySelectorAll('.timeline .event').forEach(ev=>{
+              const title=(ev.querySelector('h3')?.textContent||'').trim();
+              let key='play';
+              if(ev.classList.contains('transport')) key='transport';
+              else if(ev.classList.contains('food')) key='food';
+              else if(ev.classList.contains('hotel')) key='hotel';
+              else if(ev.classList.contains('booking-event')) key='booking';
+              else if(/入境|海关|值机|安检|出境|取票|取行李|报到|办理|退房|确认|寄存行李/.test(title)) key='procedure';
+              const def=kindDefs[key];
+              ev.classList.add(def.cls);
+              const row=ev.querySelector('.time-row');
+              const time=row?.querySelector('.time');
+              if(row && time && !row.querySelector('.event-kind')){
+                const badge=document.createElement('span');
+                badge.className='event-kind';
+                badge.textContent=def.label;
+                time.insertAdjacentElement('afterend',badge);
+              }
+            });
+          '''
+          js_marker="  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});"
+          if 'const kindDefs={' not in s:
+              if js_marker not in s:
+                  raise SystemExit('JS marker not found')
+              s=s.replace(js_marker, js+'\n'+js_marker, 1)
+          p.write_text(s)
+          PY
+      - name: Commit change
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Clarify itinerary timeline node types [skip ci]"
+          git push
