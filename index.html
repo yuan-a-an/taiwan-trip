@@ -6,7 +6,10 @@
 fetch('./itinerary-base.html?merged=2').then(r=>r.text()).then(src=>{
   const extraCss = `
 .ticket-hub{background:rgba(255,253,248,.97);border:1px solid rgba(60,75,85,.1);border-radius:22px;box-shadow:var(--shadow);padding:21px;margin-bottom:18px;scroll-margin-top:78px}
-.ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.ticket-card{padding:15px;border-radius:15px;background:#f6f3ec;border:1px solid #e3ddd2}.ticket-card.done{background:linear-gradient(135deg,#eef7f4,#fff);border-color:#cfe3dc}.ticket-card.pending{background:#fff0ed;border:2px solid #d85c52}.ticket-card h3{margin:0 0 8px;font-size:17px}.ticket-card p{margin:6px 0;font-size:13px}.mailkey{display:block;margin:6px 0 9px;padding:8px 10px;border-radius:10px;background:#fff;border:1px solid #dedbd3;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;word-break:break-word}.status-ok{display:inline-flex;margin-left:6px;padding:3px 8px;border-radius:999px;background:#d9eee7;color:#15594f;font-size:11px;font-weight:850}.status-failed{display:inline-flex;margin-left:6px;padding:3px 8px;border-radius:999px;background:#d94c43;color:#fff;font-size:11px;font-weight:850}.ticket-card .action{font-weight:750;color:#174d60}.important-ticket{margin-top:12px;padding:14px 15px;border-radius:14px;background:#fff0ed;border:2px solid #d85c52;font-size:14px}.important-ticket b{color:#a52f28;font-size:15px}.book-item.important{background:#fff0ed;border:2px solid #d85c52}.book-item.important b{color:#a52f28}@media(max-width:760px){.ticket-grid{grid-template-columns:1fr}}
+.ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.ticket-card{padding:15px;border-radius:15px;background:#f6f3ec;border:1px solid #e3ddd2}.ticket-card.done{background:linear-gradient(135deg,#eef7f4,#fff);border-color:#cfe3dc}.ticket-card.pending{background:#fff0ed;border:2px solid #d85c52}.ticket-card h3{margin:0 0 8px;font-size:17px}.ticket-card p{margin:6px 0;font-size:13px}.mailkey{display:block;margin:6px 0 9px;padding:8px 10px;border-radius:10px;background:#fff;border:1px solid #dedbd3;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;word-break:break-word}.status-ok{display:inline-flex;margin-left:6px;padding:3px 8px;border-radius:999px;background:#d9eee7;color:#15594f;font-size:11px;font-weight:850}.status-failed{display:inline-flex;margin-left:6px;padding:3px 8px;border-radius:999px;background:#d94c43;color:#fff;font-size:11px;font-weight:850}.ticket-card .action{font-weight:750;color:#174d60}.important-ticket{margin-top:12px;padding:14px 15px;border-radius:14px;background:#fff0ed;border:2px solid #d85c52;font-size:14px}.important-ticket b{color:#a52f28;font-size:15px}.book-item.important{background:#fff0ed;border:2px solid #d85c52}.book-item.important b{color:#a52f28}
+.food-backup-actions{display:flex;justify-content:flex-end;margin-top:14px}.food-backup-btn{appearance:none;border:1px solid #c7d8d5;background:#f1f8f6;color:#17665e;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;line-height:1.2;box-shadow:0 2px 8px rgba(23,102,94,.08)}.food-backup-btn:hover{background:#e5f3ef}.food-backup-btn:active{transform:translateY(1px)}
+.food-backup-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(16,32,40,.48);backdrop-filter:blur(3px)}.food-backup-modal.open{display:flex}.food-backup-dialog{width:min(620px,100%);max-height:min(82vh,760px);overflow:auto;background:#fffdf9;border-radius:22px;box-shadow:0 24px 70px rgba(15,33,42,.28);border:1px solid rgba(40,70,80,.12)}.food-backup-head{position:sticky;top:0;z-index:2;display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:18px 20px 14px;background:rgba(255,253,249,.96);backdrop-filter:blur(8px);border-bottom:1px solid #ece6dc}.food-backup-head h3{margin:0;font-size:20px;line-height:1.35}.food-backup-close{appearance:none;border:0;background:#eef2f2;width:36px;height:36px;border-radius:50%;font-size:22px;line-height:36px;cursor:pointer;color:#455b62;flex:0 0 auto}.food-backup-body{padding:18px 20px 22px}.food-backup-rule{padding:11px 13px;margin-bottom:13px;border-radius:12px;background:#fff1ed;border:1px solid #f0c8bf;color:#8b382f;font-size:13px;font-weight:750}.food-option{padding:13px 14px;margin-top:10px;border-radius:14px;background:#f7f5ef;border:1px solid #e6e0d5}.food-option b{display:block;margin-bottom:5px;color:#173445}.food-option p{margin:0;line-height:1.6;font-size:14px}.food-option.primary{background:#eef7f4;border-color:#cbe2db}.food-option.emergency{background:#f7f7f7;color:#56676d}
+@media(max-width:760px){.ticket-grid{grid-template-columns:1fr}.food-backup-modal{padding:10px;align-items:flex-end}.food-backup-dialog{max-height:88vh;border-radius:20px 20px 14px 14px}.food-backup-head{padding:16px}.food-backup-body{padding:14px 16px 18px}.food-backup-btn{padding:9px 14px;font-size:13px}}
 `;
   src = src.replace('</style>', extraCss + '</style>');
   src = src.replace('<a href="#pre">订票准备</a><a href="#map">路线地图</a>', '<a href="#tickets">票务速查</a><a href="#pre">订票准备</a><a href="#map">路线地图</a>');
@@ -15,40 +18,12 @@ fetch('./itinerary-base.html?merged=2').then(r=>r.text()).then(src=>{
 <section class="ticket-hub" id="tickets">
   <div class="section-title"><h2>票务速查｜现场第一时间怎么找到</h2><p>公开网页只写 Gmail 关键字，不保存预约号、护照号或 QR Code</p></div>
   <div class="ticket-grid">
-    <div class="ticket-card done">
-      <h3>9/20–9/21 小琉球往返船票 <span class="status-ok">已买</span></h3>
-      <p><b>Gmail 搜：</b></p><div class="mailkey">请立即查收KKday订购确认凭证</div>
-      <p class="action">怎么用：KKday「免换票」东琉线往返票。现场打开凭证 QR Code，按工作人员指引验票登船。</p>
-      <p>去程9/20、回程9/21使用同一份往返凭证；护照随身带着。建议目标船班前至少30分钟到码头。</p>
-    </div>
-    <div class="ticket-card done">
-      <h3>9/25 阿里山→祝山观日列车 <span class="status-ok">已买</span></h3>
-      <p><b>Gmail 搜：</b></p><div class="mailkey">阿里山林鐵網路訂票付款成功通知</div>
-      <p class="action">9/24 到阿里山后去阿里山车站窗口，带订票时使用的护照原件取票。</p>
-      <p>车票非对号座；9/24 下午约16:30后再次确认9/25最终发车时间。</p>
-    </div>
-    <div class="ticket-card done">
-      <h3>9/25 阿里山→高铁嘉义 7329 A线 <span class="status-ok">已买</span></h3>
-      <p><b>Gmail 搜：</b></p><div class="mailkey">阿里山EASY GO付款成功通知信</div>
-      <p class="action">班次10:10阿里山发。约09:50到转运站，打开邮件里的凭证 QR Code 报到。</p>
-      <p>不要只找“订单成立通知信”，优先找“付款成功通知信”。</p>
-    </div>
-    <div class="ticket-card done">
-      <h3>9/25 高铁嘉义→左营 <span class="status-ok">已买</span></h3>
-      <p><b>Gmail 搜：</b></p><div class="mailkey">台灣高鐵網路訂票付款成功通知</div>
-      <p class="action">639次｜嘉义14:14 → 左营14:45｜标准车厢｜2张对号座。</p>
-      <p>前段7329表定13:10到嘉义，约64分钟缓冲；发车前完成取票。</p>
-    </div>
-    <div class="ticket-card pending">
-      <h3>9/20、9/21 9127D <span class="status-failed">未买成</span></h3>
-      <p><b>原因：</b>MAXA线上支付连续出现3D Secure验证失败。</p>
-      <p class="action">9/20到高铁左营站2号出口附近柜台线下处理。</p>
-      <p>9/20目标08:30→09:20；若满员，下一班09:00→10:00。9/21目标12:13→13:03；若满员，下一班12:43→13:33。</p>
-    </div>
-    <div class="ticket-card pending">
-      <h3>9/21 左营→台南高铁 <span class="status-failed">待购买</span></h3>
-      <p>等9127D回程班次锁定后再买，避免接得过紧。高铁台南站→小西门的H31不用提前订票。</p>
-    </div>
+    <div class="ticket-card done"><h3>9/20–9/21 小琉球往返船票 <span class="status-ok">已买</span></h3><p><b>Gmail 搜：</b></p><div class="mailkey">请立即查收KKday订购确认凭证</div><p class="action">怎么用：KKday「免换票」东琉线往返票。现场打开凭证 QR Code，按工作人员指引验票登船。</p><p>去程9/20、回程9/21使用同一份往返凭证；护照随身带着。建议目标船班前至少30分钟到码头。</p></div>
+    <div class="ticket-card done"><h3>9/25 阿里山→祝山观日列车 <span class="status-ok">已买</span></h3><p><b>Gmail 搜：</b></p><div class="mailkey">阿里山林鐵網路訂票付款成功通知</div><p class="action">9/24 到阿里山后去阿里山车站窗口，带订票时使用的护照原件取票。</p><p>车票非对号座；9/24 下午约16:30后再次确认9/25最终发车时间。</p></div>
+    <div class="ticket-card done"><h3>9/25 阿里山→高铁嘉义 7329 A线 <span class="status-ok">已买</span></h3><p><b>Gmail 搜：</b></p><div class="mailkey">阿里山EASY GO付款成功通知信</div><p class="action">班次10:10阿里山发。约09:50到转运站，打开邮件里的凭证 QR Code 报到。</p><p>不要只找“订单成立通知信”，优先找“付款成功通知信”。</p></div>
+    <div class="ticket-card done"><h3>9/25 高铁嘉义→左营 <span class="status-ok">已买</span></h3><p><b>Gmail 搜：</b></p><div class="mailkey">台灣高鐵網路訂票付款成功通知</div><p class="action">639次｜嘉义14:14 → 左营14:45｜标准车厢｜2张对号座。</p><p>前段7329表定13:10到嘉义，约64分钟缓冲；发车前完成取票。</p></div>
+    <div class="ticket-card pending"><h3>9/20、9/21 9127D <span class="status-failed">未买成</span></h3><p><b>原因：</b>MAXA线上支付连续出现3D Secure验证失败。</p><p class="action">9/20到高铁左营站2号出口附近柜台线下处理。</p><p>9/20目标08:30→09:20；若满员，下一班09:00→10:00。9/21目标12:13→13:03；若满员，下一班12:43→13:33。</p></div>
+    <div class="ticket-card pending"><h3>9/21 左营→台南高铁 <span class="status-failed">待购买</span></h3><p>等9127D回程班次锁定后再买，避免接得过紧。高铁台南站→小西门的H31不用提前订票。</p></div>
   </div>
 </section>`;
 
@@ -59,162 +34,70 @@ fetch('./itinerary-base.html?merged=2').then(r=>r.text()).then(src=>{
   src = src.replace('<div class="book-item"><b>⑦ 9/24、9/25山线公交</b><span>9/24隙顶上阿里山；9/25阿里山到高铁嘉义站，按网页时刻执行。</span></div>', '<div class="book-item"><b>⑦ 9/24、9/25山线公交</b><span>9/24隙顶上阿里山改为A线＋B线并行候车，有位就上；9/25 10:10阿里山→高铁嘉义已购票。</span></div>');
 
   const timelinePatches = [
-    [
-      '<div class="fallback"><b>08:30满员或没赶上：</b>立即向柜台确认下一班可搭班次，不要自己猜时刻；若等待会影响船班，直接改Uber/计程车去东港。<span class="freq">现场确认</span></div>',
-      '<div class="fallback"><b>08:30满员或没赶上：</b>优先改搭09:00左营发、约10:00到东琉线码头；到码头后直接排后续可搭船班。只有下一班也会明显压缩当天活动时，再改Uber/计程车去东港。<span class="freq">下一班约30分钟</span></div>'
-    ],
-    [
-      '海月靠近白沙港。先寄存行李，再完成电动车说明和安全检查；确认第二天退房后能否继续寄存。',
-      '海月靠近白沙港。先寄存行李，再完成电动车说明和安全检查；取车前必须确认车型（电动机车／电动自行车）、外国旅客证件或驾照要求、是否允许双载；若不能双载就两人各一辆。并确认第二天退房后能否继续寄存。'
-    ],
-    [
-      '<div class="fallback"><b>12:13无位或错过：</b>现场问下一班可搭时间；若等待过久，直接改叫Uber/计程车从东港去台南。<span class="freq">现场确认</span><br>H31为市区接驳，不需要现在预订。</div>',
-      '<div class="fallback"><b>12:13无位或错过：</b>下一班12:43从东琉线码头发、13:33到左营；再下一班13:13→14:03。若只能搭13:13以后班次，优先取消当日下午赤崁楼，或直接改Uber/计程车去台南。<span class="freq">30分钟 / 30分钟</span><br>H31为市区接驳，不需要现在预订。</div>'
-    ],
-    [
-      '优先走主要观景段，不强求完整步道；17:10前到日落视野较好的位置。',
-      '优先走主要观景段，不强求完整步道；17:10前到日落视野较好的位置。出发前向十方山水确认日落后返程步行路线是否合适、是否可协助接送；手机照明和电量要留足。'
-    ],
-    [
-      '<h2>隙顶 → 阿里山｜台湾好行A线</h2><p>不包车。核心是带着行李赶上10:50左右经过隙顶的公交。</p>',
-      '<h2>隙顶 → 阿里山｜台湾好行A线＋B线</h2><p>不包车。核心是提早到隙顶站，同时看A/B线动态；中途站不能预约，有位的车先上，不死等10:50 A线。</p>'
-    ],
-    [
-      '<article class="event transport"><div class="time-row"><div class="time">09:40–10:20</div><span class="duration">民宿短接驳</span></div><h3>十方山水 → 隙顶公交站</h3><p>提前请民宿送到“隙顶”站，至少提前20分钟候车。不要拖着行李临时走山路找站牌。</p>',
-      '<article class="event transport"><div class="time-row"><div class="time">09:15–09:35</div><span class="duration">民宿短接驳</span></div><h3>十方山水 → 隙顶公交站</h3><p>前一晚请民宿确认09:15左右出发，目标09:35前到“隙顶”站。这样10:00左右经过的A/B线能上就直接上；不要拖着行李临时走山路找站牌。</p>'
-    ],
-    [
-      '<article class="event transport"><div class="time-row"><div class="time">10:50–12:00</div><span class="duration">台湾好行7329 A线</span></div><h3>隙顶 → 阿里山转运站</h3><p>目标搭09:30从高铁嘉义站始发、约10:50经过隙顶、12:00抵达阿里山的班次。可刷悠游卡／一卡通。</p><div class="critical">中途站不能预约座位，始发站乘客优先；连假前一天可能客满。请民宿协助确认站点与当天公车动态。</div><div class="fallback"><b>没上到10:50班次：</b>下一班约11:30经过隙顶、12:40到阿里山；再下一班约12:20经过，14:05到阿里山。<span class="freq">40分钟 / 50分钟</span><br>改搭11:30时仍能完成森林主路线；改搭12:20时取消沼平线，改走住宿区附近短路线。</div></article>',
-      '<article class="event transport"><div class="time-row"><div class="time">09:35–12:40</div><span class="duration">A/B线谁先有位就上</span></div><h3>隙顶 → 阿里山转运站</h3><p>中途站不能预约座位。到站后同时看A线与B线动态，优先尝试10:00左右A/B线；没上到就依次看10:30 B线、10:50 A线、11:00 B线、11:30 A/B线。可刷悠游卡／一卡通。</p><div class="critical">9/24是连假前一天，而且你们带行李。现场原则只有一个：有位就上，不要为了等10:50 A线放过更早的B线。</div><div class="fallback"><b>11:30仍没上到：</b>继续看12:20 A线或12:30 B线；预计13:40–14:05到阿里山。到这个时间就取消沼平线，改住宿区＋短步道。若连续多班客满，请十方山水协助联系当地车辆。<span class="freq">保底方案</span></div></article>'
-    ],
-    [
-      '<article class="event transport"><div class="time-row"><div class="time">约13:30–14:10</div><span class="duration">台湾高铁</span></div><h3>高铁嘉义 → 左营</h3><p>实际班次等9月时刻开放后选定。一般车程约30分钟，建议购买预留20分钟换乘缓冲的班次。</p><div class="fallback"><b>没赶上原高铁：</b>嘉义至左营白天通常有后续列车可改搭，等待成本多为约20–40分钟。<span class="freq">约20–40分钟</span></div></article>',
-      '<article class="event transport"><div class="time-row"><div class="time">14:14–14:45</div><span class="duration">高铁639次｜已购票</span></div><h3>高铁嘉义 → 左营</h3><p>7329 A线表定13:10到高铁嘉义站，预留约64分钟换乘。车次639，标准车厢，2张对号座；发车前完成取票并进闸。</p><div class="fallback"><b>巴士严重延误、赶不上14:14：</b>先到高铁柜台处理原票，再按现场可改搭班次调整；当天9/25港区行程直接取消，不再赶景点。<span class="freq">先保住转场</span></div></article>'
-    ],
-    [
-      '<article class="event transport"><div class="time-row"><div class="time">14:10–14:40</div><span class="duration">高雄捷运红线</span></div><h3>R16左营 → R10美丽岛</h3><p>往小港方向，Hotel Dùa靠近美丽岛站6号出口。</p><div class="fallback"><b>错过捷运：</b>白天约4–8分钟一班。<span class="freq">约4–8分钟</span></div></article>',
-      '<article class="event transport"><div class="time-row"><div class="time">15:00–15:25</div><span class="duration">高雄捷运红线</span></div><h3>R16左营 → R10美丽岛</h3><p>14:45高铁到左营后先出站、转捷运，再搭红线往小港方向；Hotel Dùa靠近美丽岛站6号出口。</p><div class="fallback"><b>错过捷运：</b>白天约4–8分钟一班。<span class="freq">约4–8分钟</span></div></article>'
-    ],
-    [
-      '<article class="event hotel"><div class="time-row"><div class="time">14:40–15:35</div><span class="duration">入住与休息</span></div><h3>Hotel Dùa</h3></article>',
-      '<article class="event hotel"><div class="time-row"><div class="time">15:25–16:15</div><span class="duration">入住与休息</span></div><h3>Hotel Dùa</h3><p>凌晨看日出＋3小时山路巴士后，先洗澡、补水、休息。16:15再决定是否去港区，不为了完成表格硬出门。</p></article>'
-    ],
-    [
-      '<article class="event transport"><div class="time-row"><div class="time">15:40–16:05</div><span class="duration">橘线</span></div><h3>美丽岛 → 盐埕埔</h3><p><span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O2 盐埕埔</span>，往哈玛星方向。</p></article>',
-      '<article class="event transport"><div class="time-row"><div class="time">16:20–16:40</div><span class="duration">OPTIONAL｜橘线</span></div><h3>美丽岛 → 盐埕埔</h3><p>仅在体力良好时执行。<span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O2 盐埕埔</span>，往哈玛星方向；累就直接留在酒店休息，把港区全部放到9/26。</p></article>'
-    ],
-    [
-      '<article class="event"><div class="time-row"><div class="time">16:10–19:15</div><span class="duration">驳二＋大港桥</span></div><h3>驳二艺术特区 → 19:00开合秀</h3><p>由大勇仓库向大义仓库走，18:35前到大港桥。</p></article>',
-      '<article class="event"><div class="time-row"><div class="time">16:45–19:15</div><span class="duration">OPTIONAL｜驳二＋大港桥</span></div><h3>驳二艺术特区 → 19:00开合秀</h3><p>这段不是必须项目。体力好就由大勇仓库向大义仓库走，18:35前到大港桥；如果累，直接取消，9/26本来就有完整旗津＋西子湾＋驳二日。</p></article>'
-    ],
-    [
-      '<article class="event"><div class="time-row"><div class="time">19:15–20:00</div><span class="duration">爱河湾夜景</span></div><h3>大港桥 → 高雄流行音乐中心</h3></article>',
-      '<article class="event"><div class="time-row"><div class="time">19:15–20:00</div><span class="duration">OPTIONAL｜爱河湾夜景</span></div><h3>大港桥 → 高雄流行音乐中心</h3><p>仅在当天已经执行驳二时继续；若16:15决定休息，这段一起取消。</p></article>'
-    ]
+    ['<div class="fallback"><b>08:30满员或没赶上：</b>立即向柜台确认下一班可搭班次，不要自己猜时刻；若等待会影响船班，直接改Uber/计程车去东港。<span class="freq">现场确认</span></div>','<div class="fallback"><b>08:30满员或没赶上：</b>优先改搭09:00左营发、约10:00到东琉线码头；到码头后直接排后续可搭船班。只有下一班也会明显压缩当天活动时，再改Uber/计程车去东港。<span class="freq">下一班约30分钟</span></div>'],
+    ['海月靠近白沙港。先寄存行李，再完成电动车说明和安全检查；确认第二天退房后能否继续寄存。','海月靠近白沙港。先寄存行李，再完成电动车说明和安全检查；取车前必须确认车型（电动机车／电动自行车）、外国旅客证件或驾照要求、是否允许双载；若不能双载就两人各一辆。并确认第二天退房后能否继续寄存。'],
+    ['<div class="fallback"><b>12:13无位或错过：</b>现场问下一班可搭时间；若等待过久，直接改叫Uber/计程车从东港去台南。<span class="freq">现场确认</span><br>H31为市区接驳，不需要现在预订。</div>','<div class="fallback"><b>12:13无位或错过：</b>下一班12:43从东琉线码头发、13:33到左营；再下一班13:13→14:03。若只能搭13:13以后班次，优先取消当日下午赤崁楼，或直接改Uber/计程车去台南。<span class="freq">30分钟 / 30分钟</span><br>H31为市区接驳，不需要现在预订。</div>'],
+    ['优先走主要观景段，不强求完整步道；17:10前到日落视野较好的位置。','优先走主要观景段，不强求完整步道；17:10前到日落视野较好的位置。出发前向十方山水确认日落后返程步行路线是否合适、是否可协助接送；手机照明和电量要留足。'],
+    ['<h2>隙顶 → 阿里山｜台湾好行A线</h2><p>不包车。核心是带着行李赶上10:50左右经过隙顶的公交。</p>','<h2>隙顶 → 阿里山｜台湾好行A线＋B线</h2><p>不包车。核心是提早到隙顶站，同时看A/B线动态；中途站不能预约，有位的车先上，不死等10:50 A线。</p>'],
+    ['<article class="event transport"><div class="time-row"><div class="time">09:40–10:20</div><span class="duration">民宿短接驳</span></div><h3>十方山水 → 隙顶公交站</h3><p>提前请民宿送到“隙顶”站，至少提前20分钟候车。不要拖着行李临时走山路找站牌。</p>','<article class="event transport"><div class="time-row"><div class="time">09:15–09:35</div><span class="duration">民宿短接驳</span></div><h3>十方山水 → 隙顶公交站</h3><p>前一晚请民宿确认09:15左右出发，目标09:35前到“隙顶”站。这样10:00左右经过的A/B线能上就直接上；不要拖着行李临时走山路找站牌。</p>'],
+    ['<article class="event transport"><div class="time-row"><div class="time">10:50–12:00</div><span class="duration">台湾好行7329 A线</span></div><h3>隙顶 → 阿里山转运站</h3><p>目标搭09:30从高铁嘉义站始发、约10:50经过隙顶、12:00抵达阿里山的班次。可刷悠游卡／一卡通。</p><div class="critical">中途站不能预约座位，始发站乘客优先；连假前一天可能客满。请民宿协助确认站点与当天公车动态。</div><div class="fallback"><b>没上到10:50班次：</b>下一班约11:30经过隙顶、12:40到阿里山；再下一班约12:20经过，14:05到阿里山。<span class="freq">40分钟 / 50分钟</span><br>改搭11:30时仍能完成森林主路线；改搭12:20时取消沼平线，改走住宿区附近短路线。</div></article>','<article class="event transport"><div class="time-row"><div class="time">09:35–12:40</div><span class="duration">A/B线谁先有位就上</span></div><h3>隙顶 → 阿里山转运站</h3><p>中途站不能预约座位。到站后同时看A线与B线动态，优先尝试10:00左右A/B线；没上到就依次看10:30 B线、10:50 A线、11:00 B线、11:30 A/B线。可刷悠游卡／一卡通。</p><div class="critical">9/24是连假前一天，而且你们带行李。现场原则只有一个：有位就上，不要为了等10:50 A线放过更早的B线。</div><div class="fallback"><b>11:30仍没上到：</b>继续看12:20 A线或12:30 B线；预计13:40–14:05到阿里山。到这个时间就取消沼平线，改住宿区＋短步道。若连续多班客满，请十方山水协助联系当地车辆。<span class="freq">保底方案</span></div></article>'],
+    ['<article class="event transport"><div class="time-row"><div class="time">约13:30–14:10</div><span class="duration">台湾高铁</span></div><h3>高铁嘉义 → 左营</h3><p>实际班次等9月时刻开放后选定。一般车程约30分钟，建议购买预留20分钟换乘缓冲的班次。</p><div class="fallback"><b>没赶上原高铁：</b>嘉义至左营白天通常有后续列车可改搭，等待成本多为约20–40分钟。<span class="freq">约20–40分钟</span></div></article>','<article class="event transport"><div class="time-row"><div class="time">14:14–14:45</div><span class="duration">高铁639次｜已购票</span></div><h3>高铁嘉义 → 左营</h3><p>7329 A线表定13:10到高铁嘉义站，预留约64分钟换乘。车次639，标准车厢，2张对号座；发车前完成取票并进闸。</p><div class="fallback"><b>巴士严重延误、赶不上14:14：</b>先到高铁柜台处理原票，再按现场可改搭班次调整；当天9/25港区行程直接取消，不再赶景点。<span class="freq">先保住转场</span></div></article>'],
+    ['<article class="event transport"><div class="time-row"><div class="time">14:10–14:40</div><span class="duration">高雄捷运红线</span></div><h3>R16左营 → R10美丽岛</h3><p>往小港方向，Hotel Dùa靠近美丽岛站6号出口。</p><div class="fallback"><b>错过捷运：</b>白天约4–8分钟一班。<span class="freq">约4–8分钟</span></div></article>','<article class="event transport"><div class="time-row"><div class="time">15:00–15:25</div><span class="duration">高雄捷运红线</span></div><h3>R16左营 → R10美丽岛</h3><p>14:45高铁到左营后先出站、转捷运，再搭红线往小港方向；Hotel Dùa靠近美丽岛站6号出口。</p><div class="fallback"><b>错过捷运：</b>白天约4–8分钟一班。<span class="freq">约4–8分钟</span></div></article>'],
+    ['<article class="event hotel"><div class="time-row"><div class="time">14:40–15:35</div><span class="duration">入住与休息</span></div><h3>Hotel Dùa</h3></article>','<article class="event hotel"><div class="time-row"><div class="time">15:25–16:15</div><span class="duration">入住与休息</span></div><h3>Hotel Dùa</h3><p>凌晨看日出＋3小时山路巴士后，先洗澡、补水、休息。16:15再决定是否去港区，不为了完成表格硬出门。</p></article>'],
+    ['<article class="event transport"><div class="time-row"><div class="time">15:40–16:05</div><span class="duration">橘线</span></div><h3>美丽岛 → 盐埕埔</h3><p><span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O2 盐埕埔</span>，往哈玛星方向。</p></article>','<article class="event transport"><div class="time-row"><div class="time">16:20–16:40</div><span class="duration">OPTIONAL｜橘线</span></div><h3>美丽岛 → 盐埕埔</h3><p>仅在体力良好时执行。<span class="route-chip">O5 美丽岛</span> → <span class="route-chip">O2 盐埕埔</span>，往哈玛星方向；累就直接留在酒店休息，把港区全部放到9/26。</p></article>'],
+    ['<article class="event"><div class="time-row"><div class="time">16:10–19:15</div><span class="duration">驳二＋大港桥</span></div><h3>驳二艺术特区 → 19:00开合秀</h3><p>由大勇仓库向大义仓库走，18:35前到大港桥。</p></article>','<article class="event"><div class="time-row"><div class="time">16:45–19:15</div><span class="duration">OPTIONAL｜驳二＋大港桥</span></div><h3>驳二艺术特区 → 19:00开合秀</h3><p>这段不是必须项目。体力好就由大勇仓库向大义仓库走，18:35前到大港桥；如果累，直接取消，9/26本来就有完整旗津＋西子湾＋驳二日。</p></article>'],
+    ['<article class="event"><div class="time-row"><div class="time">19:15–20:00</div><span class="duration">爱河湾夜景</span></div><h3>大港桥 → 高雄流行音乐中心</h3></article>','<article class="event"><div class="time-row"><div class="time">19:15–20:00</div><span class="duration">OPTIONAL｜爱河湾夜景</span></div><h3>大港桥 → 高雄流行音乐中心</h3><p>仅在当天已经执行驳二时继续；若16:15决定休息，这段一起取消。</p></article>']
   ];
   timelinePatches.forEach(([from,to])=>{ src = src.replace(from,to); });
 
   const foodPatches = [
-    [
-      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>林家白糖粿・蕃薯椪</h3><p class="order">建议点：白糖粿一份，两人分食。</p><p>放在国华街散步途中，不特地排很长队；超过20分钟就换附近豆花。</p></div>',
-      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>富盛號碗粿＋林家白糖粿｜国华街</h3><p class="order">富盛號：碗粿1份＋旗鱼羹1份，两人分食；林家：白糖粿1份两人分。</p><p>9/21下午先吃富盛號，它约16:30收店；如果16:10还没到国华街就直接跳过，不影响后续。白糖粿排队超过20分钟也跳过。</p></div>'
-    ],
-    [
-      '<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街</h3><p>虾仁饭、米糕、碗粿、豆花分食。热门店售完即止，不必执着单一店家。</p></article>',
-      '<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街｜富盛號优先</h3><p>到得早先去富盛號：碗粿1份＋旗鱼羹1份两人分食；之后再看林家白糖粿或豆花。热门店售完即止，不为一口小吃破坏整晚动线。</p></article>'
-    ],
-    [
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">建议点：牛肉汤、肉燥饭、炒牛肉或牛肉燥饭。</p><p>店面较大、适合把午饭吃完整；位于安平主游览区，不需要返回市中心。</p></div>',
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">两人推荐：招牌牛肉汤1份＋葱爆牛肉（小）或芥蓝牛肉（小）二选一＋牛肉燥饭1碗；想少吃就只点牛肉汤＋牛肉燥饭。</p><p>把这顿作为当天唯一一顿牛肉汤，店就在安平主游览区，不需要返回市中心。</p></div>'
-    ],
-    [
-      '<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">早餐</span></div><h3>牛肉汤早餐</h3><p>选酒店附近或顺路店家，08:10前回酒店门口叫车。</p></article>',
-      '<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">轻量早餐</span></div><h3>酒店早餐／普通台南早餐</h3><p>不再安排第二顿牛肉汤；早餐吃轻一点，把胃口留给11:10左右的文章牛肉汤。08:10前回酒店门口叫车。</p></article>'
-    ],
-    [
-      '<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>先把牛肉汤作为当天正餐，再去同记豆花；13:00左右叫车离开。</p></article>',
-      '<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>文章两人点：招牌牛肉汤1＋葱爆牛肉（小）/芥蓝牛肉（小）二选一＋牛肉燥饭1；之后同记点传统白豆花或竹炭黑豆花1碗两人分。13:00左右叫车离开。</p></article>'
-    ],
-    [
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">建议点：沙锅菜＋鱼肉、火鸡肉饭，两人不要直接点整颗大鱼头。</p><p>故宫南院参观后再前往嘉义市中心；如果排队超过40分钟，就改吃附近火鸡肉饭，不能影响上山。</p>',
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">两人推荐：沙锅鱼肉1份（或沙锅菜1份）＋火鸡肉饭1–2碗；不要点整颗鱼头，份量对两个人太大。</p><p>故宫南院参观后再前往嘉义市中心；排队30–40分钟以内可以等，超过40分钟立即改附近火鸡肉饭，不能影响上山。</p>'
-    ],
-    [
-      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">建议点：葡萄柚绿茶，微糖或半糖。</p><p>与林聪明同属嘉义市中心，适合等位时外带，不单独绕路。</p></div>',
-      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">推荐点：葡萄柚绿茶1杯两人分。当前菜单为三分糖少冰、含梅子，按店家标准甜度即可。</p><p>与林聪明同属嘉义市中心，适合等位时外带；如果饮料也要排很久就放弃，不单独绕路。</p></div>'
-    ],
-    [
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山美食馆｜园区内午饭</h3><p class="order">建议点：山菜、竹笋、热汤或简餐，选择出餐快的组合。</p><p>官方园区资料列出的午间营业时段为11:00–14:00，刚好衔接12:00左右抵达。</p>',
-      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山园区午饭｜就近不排队</h3><p class="order">两人点法：山菜／竹笋任选1份＋热汤1份＋1份主食；哪家不用排就去哪家，不为餐厅耽误森林徒步和小火车。</p><p>午饭是功能性补给，目标是吃热、吃饱、快出餐；抵达时间晚就直接选商店街最顺的一家。</p>'
-    ]
+    ['<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>林家白糖粿・蕃薯椪</h3><p class="order">建议点：白糖粿一份，两人分食。</p><p>放在国华街散步途中，不特地排很长队；超过20分钟就换附近豆花。</p></div>','<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>富盛號碗粿＋林家白糖粿｜国华街</h3><p class="order">富盛號：碗粿1份＋旗鱼羹1份，两人分食；林家：白糖粿1份两人分。</p><p>9/21下午先吃富盛號，它约16:30收店；如果16:10还没到国华街就直接跳过，不影响后续。白糖粿排队超过20分钟也跳过。</p></div>'],
+    ['<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街</h3><p>虾仁饭、米糕、碗粿、豆花分食。热门店售完即止，不必执着单一店家。</p></article>','<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街｜富盛號优先</h3><p>到得早先去富盛號：碗粿1份＋旗鱼羹1份两人分食；之后再看林家白糖粿或豆花。热门店售完即止，不为一口小吃破坏整晚动线。</p></article>'],
+    ['<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">建议点：牛肉汤、肉燥饭、炒牛肉或牛肉燥饭。</p><p>店面较大、适合把午饭吃完整；位于安平主游览区，不需要返回市中心。</p></div>','<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">两人推荐：招牌牛肉汤1份＋葱爆牛肉（小）或芥蓝牛肉（小）二选一＋牛肉燥饭1碗；想少吃就只点牛肉汤＋牛肉燥饭。</p><p>把这顿作为当天唯一一顿牛肉汤，店就在安平主游览区，不需要返回市中心。</p></div>'],
+    ['<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">早餐</span></div><h3>牛肉汤早餐</h3><p>选酒店附近或顺路店家，08:10前回酒店门口叫车。</p></article>','<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">轻量早餐</span></div><h3>酒店早餐／普通台南早餐</h3><p>不再安排第二顿牛肉汤；早餐吃轻一点，把胃口留给11:10左右的文章牛肉汤。08:10前回酒店门口叫车。</p></article>'],
+    ['<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>先把牛肉汤作为当天正餐，再去同记豆花；13:00左右叫车离开。</p></article>','<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>文章两人点：招牌牛肉汤1＋葱爆牛肉（小）/芥蓝牛肉（小）二选一＋牛肉燥饭1；之后同记点传统白豆花或竹炭黑豆花1碗两人分。13:00左右叫车离开。</p></article>'],
+    ['<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">建议点：沙锅菜＋鱼肉、火鸡肉饭，两人不要直接点整颗大鱼头。</p><p>故宫南院参观后再前往嘉义市中心；如果排队超过40分钟，就改吃附近火鸡肉饭，不能影响上山。</p>','<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">两人推荐：沙锅鱼肉1份（或沙锅菜1份）＋火鸡肉饭1–2碗；不要点整颗鱼头，份量对两个人太大。</p><p>故宫南院参观后再前往嘉义市中心；排队30–40分钟以内可以等，超过40分钟立即改附近火鸡肉饭，不能影响上山。</p>'],
+    ['<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">建议点：葡萄柚绿茶，微糖或半糖。</p><p>与林聪明同属嘉义市中心，适合等位时外带，不单独绕路。</p></div>','<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">推荐点：葡萄柚绿茶1杯两人分。当前菜单为三分糖少冰、含梅子，按店家标准甜度即可。</p><p>与林聪明同属嘉义市中心，适合等位时外带；如果饮料也要排很久就放弃，不单独绕路。</p></div>'],
+    ['<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山美食馆｜园区内午饭</h3><p class="order">建议点：山菜、竹笋、热汤或简餐，选择出餐快的组合。</p><p>官方园区资料列出的午间营业时段为11:00–14:00，刚好衔接12:00左右抵达。</p>','<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山园区午饭｜就近不排队</h3><p class="order">两人点法：山菜／竹笋任选1份＋热汤1份＋1份主食；哪家不用排就去哪家，不为餐厅耽误森林徒步和小火车。</p><p>午饭是功能性补给，目标是吃热、吃饱、快出餐；抵达时间晚就直接选商店街最顺的一家。</p>']
   ];
   foodPatches.forEach(([from,to])=>{ src = src.replace(from,to); });
 
-  const mealBackupHub = `
-<section class="ticket-hub" id="food-backups">
-  <div class="section-title"><h2>每餐备选｜热门店排队就切换</h2><p>目标不是吃遍榜单，而是不让排队破坏交通、日落和徒步</p></div>
-  <div class="important-ticket"><b>排队止损规则：</b>早餐最多等10–15分钟；普通正餐最多等30分钟；林聪明最多40分钟；饮料／甜品最多10–15分钟。超过时间立刻切B方案，B也排就用C方案。</div>
-  <div class="ticket-grid">
-    <div class="ticket-card">
-      <h3>9/19｜仙台 → 高雄</h3>
-      <p><b>晚饭：</b>A 仙台机场提前吃；B 安检后就近简餐／便利店。不要把正式晚饭拖到高雄午夜。</p>
-      <p><b>高雄宵夜：</b>A 庄记海产粥：海产粥1份＋盐蒸虾两人分；B 方记水饺：水饺＋酸辣汤；C 00:20还没离开酒店就取消夜市，便利店解决。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/20｜高雄 → 小琉球</h3>
-      <p><b>早餐：</b>A Brio 07:00开门就快速吃；B 前一晚买饭团／三明治带走。07:20左右必须结束，不为早餐影响左营9127D。</p>
-      <p><b>午饭：</b>A 相思麵：干麵＋炸肉丸＋少量卤味；B 土地公ㄉ午晚餐：咖喱鸡／猪肉锅；C 就近吃不用排队的简餐。13:00前必须结束，给水上活动留时间。</p>
-      <p><b>晚饭：</b>A 真饌海鮮樓（只在提前预约确认后去）；B 土地公ㄉ午晚餐；C 白沙港／三民路看到有位的店直接吃。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/21｜小琉球 → 台南</h3>
-      <p><b>早餐：</b>A 洪妈妈早餐，尽量07:00前到：琉球粿／香肠碗粿＋红茶牛奶；B 民宿或附近普通早餐；C 便利店。排队超过15分钟直接走。</p>
-      <p><b>台南下午正餐：</b>A 矮仔成：虾仁饭＋煎鸭蛋＋汤；B 集品虾仁饭；C 到国华街后富盛號碗粿＋旗鱼羹。三者只选一条主线，不连吃三家。</p>
-      <p><b>晚饭：</b>A 国华街／海安路边走边吃；B 如果小吃已经够饱就不再安排正餐；C 回烟波附近或便利店补轻食。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/22｜台南安平＋市区</h3>
-      <p><b>早餐：</b>A 酒店／普通台南早餐；B 便利店轻食。早餐不排队，把胃口留给中午。</p>
-      <p><b>午饭：</b>A 文章牛肉汤：牛肉汤＋葱爆/芥蓝牛肉小份＋牛肉燥饭；B 文章等超过30分钟就先逛老街，12:00后去阿财牛肉汤：牛肉汤＋牛肉燥饭；C 安平老街找不用排队的虾卷、蚵嗲或面食。</p>
-      <p><b>甜品：</b>A 同记安平豆花1碗两人分；B 附近任一豆花／冰店。超过10–15分钟不等。</p>
-      <p><b>晚饭：</b>A 中西区看到有位的台南小吃店直接吃；B 回烟波附近解决。当天已经吃很多，不再追另一家超级排队名店。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/23｜台南 → 嘉义 → 隙顶</h3>
-      <p><b>早餐：</b>A 烟波早餐；B 路上便利店。08:00包车准时出发优先。</p>
-      <p><b>午饭：</b>A 林聪明：沙锅鱼肉/沙锅菜1份＋火鸡肉饭1–2碗；B 民主火鸡肉饭：火鸡肉饭＋卤蛋/小菜；C 文化路周边看到空位的火鸡肉饭。林聪明超过40分钟立即切B。</p>
-      <p><b>饮料：</b>A 御香屋葡萄柚绿茶1杯两人分；B 任一顺路手摇饮。排饮料超过10分钟就放弃。</p>
-      <p><b>晚饭：</b>A 提前向十方山水确认／预约晚餐；B 上山前在石棹买便当或熟食；C 石棹便利店买饭团、泡面和水。绝对不要看完日落才临时找山上餐厅。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/24｜隙顶 → 阿里山</h3>
-      <p><b>早餐：</b>A 十方山水早餐；B 前一晚准备面包／饭团。当天上山交通优先，不外出追早餐店。</p>
-      <p><b>午饭：</b>A 阿里山美食馆：山菜／竹笋＋热汤＋主食；B 九九九餐厅：炒高山云笋＋山葵椒盐鱼片或简单合菜；C 欣欣／海山园／商店街哪家不用排就吃哪家。</p>
-      <p><b>晚饭：</b>A 午饭没吃的园区餐厅；B 九九九／欣欣等仍营业的店；C 商店街便利店。晚饭只求热、快，早点休息准备祝山日出。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/25｜阿里山日出 → 高雄</h3>
-      <p><b>早餐：</b>A 青山别馆早餐；B 联宝早安／商店街早餐；C 便利店。08:35前结束并取行李。</p>
-      <p><b>午饭：</b>A 上10:10巴士前买好饭团／三明治；B 13:10准点到高铁嘉义后再在站内买即食；C 高铁上吃简单点心。不要坐下来吃正式午饭，14:14高铁不能冒险。</p>
-      <p><b>晚饭：</b>A 若19:30前到盐埕且鸭肉珍排队≤20分钟：鸭肉饭＋烟熏鸭肉＋汤；B 时间晚或队太长就回美丽岛／六合夜市吃；C Hotel Dùa附近或便利店。鸭肉珍不要压到20点后才去。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/26｜旗津＋西子湾＋驳二</h3>
-      <p><b>早餐：</b>A Hotel Dùa早餐；B 附近便利店／咖啡店。不专门排早餐名店。</p>
-      <p><b>午饭：</b>A 旗津万二：两人选3道小份海鲜＋炒饭/汤；B 万三小吃部：白虾、海瓜子、三杯中卷等挑2–3样＋主食；C 老街海鲜面／赤肉羹。万二排超过20–30分钟就直接切万三。</p>
-      <p><b>晚饭：</b>A 若9/25没吃成，19:30前去鸭肉珍；B 港园牛肉麵：牛肉拌麵／牛肉麵；C 超过20:00就不要再追盐埕老店，直接六合夜市或Hotel Dùa附近。</p>
-      <p><b>甜品：</b>A 高雄婆婆冰；B 盐埕任一不用排的冰店。甜品最多等10分钟。</p>
-    </div>
-    <div class="ticket-card">
-      <h3>9/27｜高雄 → 东京</h3>
-      <p><b>早餐：</b>A Hotel Dùa étage15；B 便利店。返程日不去外部排队早餐。</p>
-      <p><b>午饭：</b>A 完成值机、安检、出境后在高雄机场里面吃；B 买便利店／轻食带上飞机。11:00左右必须已经在机场，不为吃饭留在市区。</p>
-      <p><b>伴手礼：</b>A 不二緻果真芋头建议9/26提前买；B 不想处理冷藏就改绿豆酥等常温品。</p>
-    </div>
+  const mealBackupData = {
+    d0919:[{limit:'宵夜最多等20分钟；00:20还没离开酒店就取消。',options:[['A｜庄记海产粥','海产粥1份＋盐蒸虾，两人分食。'],['B｜方记水饺','水饺＋酸辣汤；同在六合夜市区域，看到队短就切换。'],['C｜直接止损','便利店补水和轻食，第一晚以睡觉为主。']]},{limit:'饮料最多等10分钟。',options:[['A｜郑老牌木瓜牛奶','木瓜牛奶1杯，两人共享。'],['B｜六合夜市顺路果汁','看到不用排的果汁摊直接买，不为饮料横穿夜市。'],['C｜跳过','已经吃饱就不再加甜饮。']]}],
+    d0920:[{limit:'午饭最多等30分钟，13:00前必须结束。',options:[['A｜相思麵','相思干麵＋炸肉丸＋少量卤味。'],['B｜土地公ㄉ午晚餐','咖喱鸡或猪肉锅，能坐下就吃。'],['C｜就近简餐','白沙港／三民路找不用排队的面饭类。']]},{limit:'小吃最多等15分钟；需要预约就以店家确认时间为准。',options:[['A｜小蝌蚪起司饼','鸡肉或鲔鱼起司饼。'],['B｜麻花卷／冰品','顺路买一份分食，不额外绕路。'],['C｜跳过','水上活动和日落优先。']]}],
+    d0921:[{limit:'正餐最多等30分钟。',options:[['A｜矮仔成虾仁饭','虾仁饭＋煎鸭蛋＋汤。'],['B｜集品虾仁饭','同类台南虾仁饭，队伍明显短就直接切。'],['C｜富盛號','碗粿1份＋旗鱼羹1份，两人分食。']]},{limit:'小吃最多等15–20分钟；16:10还没到国华街就放弃富盛號。',options:[['A｜富盛號＋林家白糖粿','先碗粿＋旗鱼羹，再看白糖粿队伍。'],['B｜国华街其他米糕／豆花','看到不用等的就吃，不执着店名。'],['C｜跳过','晚上神农街、海安路照常走。']]}],
+    d0922:[{limit:'午饭最多等30分钟。',options:[['A｜文章牛肉汤','牛肉汤＋葱爆/芥蓝牛肉小份＋牛肉燥饭。'],['B｜阿财牛肉汤','牛肉汤＋牛肉燥饭；文章队伍太长就切换。'],['C｜安平老街','虾卷、蚵嗲或面食，选有位的店。']]},{limit:'甜品最多等10–15分钟。',options:[['A｜同记安平豆花','传统白豆花或竹炭黑豆花1碗两人分。'],['B｜附近豆花／冰店','同区域看到不用排的直接吃。'],['C｜跳过','下午孔庙、司法博物馆优先。']]}],
+    d0923:[{limit:'林聪明最多等40分钟；超过立即走。',options:[['A｜林聪明沙锅鱼头','沙锅鱼肉/沙锅菜1份＋火鸡肉饭1–2碗。'],['B｜民主火鸡肉饭','火鸡肉饭＋卤蛋／小菜，快速解决。'],['C｜文化路周边火鸡肉饭','看到空位的店直接吃；二延平日落优先。']]},{limit:'饮料最多等10分钟。',options:[['A｜御香屋','葡萄柚绿茶1杯两人分。'],['B｜顺路手摇饮','同区域任一不用排的饮料。'],['C｜跳过','直接上山，不为饮料耽误时间。']]}],
+    d0924:[{limit:'园区午饭最多等20分钟，徒步和小火车优先。',options:[['A｜阿里山美食馆','山菜／竹笋1份＋热汤1份＋主食1份。'],['B｜九九九餐厅','炒高山云笋＋山葵椒盐鱼片，或点简单合菜。'],['C｜欣欣／海山园／商店街','哪家不用排就吃哪家。']]},{limit:'途中小吃最多等10分钟。',options:[['A｜神木区马告香肠','1份两人分食。'],['B｜商店街零食／热饮','顺路补能量。'],['C｜跳过','森林主路线优先。']]}],
+    d0925:[{limit:'鸭肉珍最多等20分钟，而且最好19:30前到。',options:[['A｜鸭肉珍','鸭肉饭＋烟熏鸭肉切盘＋汤。'],['B｜港园牛肉麵','牛肉拌麵或牛肉麵。'],['C｜美丽岛／六合夜市','时间晚或太累就回酒店附近解决。']]},{limit:'甜品最多等10分钟。',options:[['A｜高雄婆婆冰','综合水果冰／李咸冰／番茄切盘。'],['B｜盐埕其他冰店','看到不用排的就吃。'],['C｜跳过','当天很累就直接回Hotel Dùa。']]}],
+    d0926:[{limit:'旗津午饭最多等20–30分钟。',options:[['A｜万二海产店','两人选3道小份海鲜＋炒饭或汤，先问价格和份量。'],['B｜万三小吃部','白虾、海瓜子、三杯中卷等选2–3样＋主食。'],['C｜旗津老街','海鲜面／赤肉羹，找有座位的店。']]},{limit:'现炸小吃最多等15分钟。',options:[['A｜椪嫂蕃薯椪','蕃薯椪2个。'],['B｜老街其他现炸小吃','同类地瓜球／炸物，看到队短就换。'],['C｜跳过','天气热时优先补水和休息。']]}],
+    d0927:[{limit:'返程日不排外部早餐。',options:[['A｜Hotel Dùa étage15','07:30左右直接吃酒店早餐。'],['B｜便利店','饭团／三明治＋咖啡，快速解决。'],['C｜机场再吃','只在时间紧时使用。']]},{limit:'伴手礼不临时排长队。',options:[['A｜不二緻果真芋头','最好9/26提前买或预约，注意冷藏。'],['B｜常温绿豆酥','不想处理冷藏就换常温品。'],['C｜机场伴手礼','最后兜底，不为店名影响航班。']]}]
+  };
+
+  const modalEnhancer = `
+<div class="food-backup-modal" id="foodBackupModal" aria-hidden="true">
+  <div class="food-backup-dialog" role="dialog" aria-modal="true" aria-labelledby="foodBackupTitle">
+    <div class="food-backup-head"><h3 id="foodBackupTitle">备选方案</h3><button class="food-backup-close" type="button" aria-label="关闭">×</button></div>
+    <div class="food-backup-body"><div class="food-backup-rule" id="foodBackupRule"></div><div id="foodBackupOptions"></div></div>
   </div>
-</section>`;
-  src = src.replace('<section class="booking" id="pre">', mealBackupHub + '\n<section class="booking" id="pre">');
-  src = src.replace('<a href="#tickets">票务速查</a>', '<a href="#tickets">票务速查</a><a href="#food-backups">餐饮备选</a>');
+</div>
+<script>
+(()=>{
+  const data=${JSON.stringify(mealBackupData)};
+  const modal=document.getElementById('foodBackupModal');
+  const title=document.getElementById('foodBackupTitle');
+  const rule=document.getElementById('foodBackupRule');
+  const options=document.getElementById('foodBackupOptions');
+  const closeBtn=modal.querySelector('.food-backup-close');
+  let lastFocus=null;
+  const esc=s=>String(s).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]));
+  function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+  function openModal(item,card){lastFocus=document.activeElement;title.textContent=(card.querySelector('h3')?.textContent||'这顿饭')+'｜备选方案';rule.textContent='排队止损：'+item.limit;options.innerHTML=item.options.map((o,i)=>'<div class="food-option '+(i===0?'primary':i===2?'emergency':'')+'"><b>'+esc(o[0])+'</b><p>'+esc(o[1])+'</p></div>').join('');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeBtn.focus();}
+  Object.entries(data).forEach(([dayId,items])=>{const day=document.getElementById(dayId);if(!day)return;day.querySelectorAll('.food-picks .food-pick').forEach((card,i)=>{const item=items[i];if(!item)return;const wrap=document.createElement('div');wrap.className='food-backup-actions';const btn=document.createElement('button');btn.type='button';btn.className='food-backup-btn';btn.textContent='备选方案';btn.setAttribute('aria-haspopup','dialog');btn.addEventListener('click',()=>openModal(item,card));wrap.appendChild(btn);card.appendChild(wrap);});});
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+})();
+<\/script>`;
+  src = src.replace('</body>', modalEnhancer + '\n</body>');
 
   document.open(); document.write(src); document.close();
 }).catch(e=>{document.body.innerHTML='<div style="padding:30px;font-family:sans-serif"><h2>行程载入失败</h2><p>请刷新页面重试。</p></div>';console.error(e)});
