@@ -114,6 +114,42 @@ fetch('./itinerary-base.html?merged=2').then(r=>r.text()).then(src=>{
   ];
   timelinePatches.forEach(([from,to])=>{ src = src.replace(from,to); });
 
+  const foodPatches = [
+    [
+      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>林家白糖粿・蕃薯椪</h3><p class="order">建议点：白糖粿一份，两人分食。</p><p>放在国华街散步途中，不特地排很长队；超过20分钟就换附近豆花。</p></div>',
+      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>富盛號碗粿＋林家白糖粿｜国华街</h3><p class="order">富盛號：碗粿1份＋旗鱼羹1份，两人分食；林家：白糖粿1份两人分。</p><p>9/21下午先吃富盛號，它约16:30收店；如果16:10还没到国华街就直接跳过，不影响后续。白糖粿排队超过20分钟也跳过。</p></div>'
+    ],
+    [
+      '<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街</h3><p>虾仁饭、米糕、碗粿、豆花分食。热门店售完即止，不必执着单一店家。</p></article>',
+      '<article class="event food"><div class="time-row"><div class="time">15:20–18:30</div><span class="duration">边走边吃</span></div><h3>永乐市场 → 国华街｜富盛號优先</h3><p>到得早先去富盛號：碗粿1份＋旗鱼羹1份两人分食；之后再看林家白糖粿或豆花。热门店售完即止，不为一口小吃破坏整晚动线。</p></article>'
+    ],
+    [
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">建议点：牛肉汤、肉燥饭、炒牛肉或牛肉燥饭。</p><p>店面较大、适合把午饭吃完整；位于安平主游览区，不需要返回市中心。</p></div>',
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>文章牛肉汤｜安平总店</h3><p class="order">两人推荐：招牌牛肉汤1份＋葱爆牛肉（小）或芥蓝牛肉（小）二选一＋牛肉燥饭1碗；想少吃就只点牛肉汤＋牛肉燥饭。</p><p>把这顿作为当天唯一一顿牛肉汤，店就在安平主游览区，不需要返回市中心。</p></div>'
+    ],
+    [
+      '<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">早餐</span></div><h3>牛肉汤早餐</h3><p>选酒店附近或顺路店家，08:10前回酒店门口叫车。</p></article>',
+      '<article class="event food"><div class="time-row"><div class="time">07:00–08:10</div><span class="duration">轻量早餐</span></div><h3>酒店早餐／普通台南早餐</h3><p>不再安排第二顿牛肉汤；早餐吃轻一点，把胃口留给11:10左右的文章牛肉汤。08:10前回酒店门口叫车。</p></article>'
+    ],
+    [
+      '<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>先把牛肉汤作为当天正餐，再去同记豆花；13:00左右叫车离开。</p></article>',
+      '<article class="event food"><div class="time-row"><div class="time">11:10–13:00</div><span class="duration">午饭与老街</span></div><h3>文章牛肉汤 → 同记安平豆花</h3><p>文章两人点：招牌牛肉汤1＋葱爆牛肉（小）/芥蓝牛肉（小）二选一＋牛肉燥饭1；之后同记点传统白豆花或竹炭黑豆花1碗两人分。13:00左右叫车离开。</p></article>'
+    ],
+    [
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">建议点：沙锅菜＋鱼肉、火鸡肉饭，两人不要直接点整颗大鱼头。</p><p>故宫南院参观后再前往嘉义市中心；如果排队超过40分钟，就改吃附近火鸡肉饭，不能影响上山。</p>',
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>林聪明沙锅鱼头｜嘉义</h3><p class="order">两人推荐：沙锅鱼肉1份（或沙锅菜1份）＋火鸡肉饭1–2碗；不要点整颗鱼头，份量对两个人太大。</p><p>故宫南院参观后再前往嘉义市中心；排队30–40分钟以内可以等，超过40分钟立即改附近火鸡肉饭，不能影响上山。</p>'
+    ],
+    [
+      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">建议点：葡萄柚绿茶，微糖或半糖。</p><p>与林聪明同属嘉义市中心，适合等位时外带，不单独绕路。</p></div>',
+      '<div class="food-pick snack"><span class="food-type">今日小吃</span><h3>源兴御香屋｜葡萄柚绿茶</h3><p class="order">推荐点：葡萄柚绿茶1杯两人分。当前菜单为三分糖少冰、含梅子，按店家标准甜度即可。</p><p>与林聪明同属嘉义市中心，适合等位时外带；如果饮料也要排很久就放弃，不单独绕路。</p></div>'
+    ],
+    [
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山美食馆｜园区内午饭</h3><p class="order">建议点：山菜、竹笋、热汤或简餐，选择出餐快的组合。</p><p>官方园区资料列出的午间营业时段为11:00–14:00，刚好衔接12:00左右抵达。</p>',
+      '<div class="food-pick"><span class="food-type">今日正餐</span><h3>阿里山园区午饭｜就近不排队</h3><p class="order">两人点法：山菜／竹笋任选1份＋热汤1份＋1份主食；哪家不用排就去哪家，不为餐厅耽误森林徒步和小火车。</p><p>午饭是功能性补给，目标是吃热、吃饱、快出餐；抵达时间晚就直接选商店街最顺的一家。</p>'
+    ]
+  ];
+  foodPatches.forEach(([from,to])=>{ src = src.replace(from,to); });
+
   document.open(); document.write(src); document.close();
 }).catch(e=>{document.body.innerHTML='<div style="padding:30px;font-family:sans-serif"><h2>行程载入失败</h2><p>请刷新页面重试。</p></div>';console.error(e)});
 </script></body></html>
